@@ -1,5 +1,5 @@
 # Tapestry 5.4.* integration jQuery component - 1.0
-
+test
 ## Demo and documentation
 http://www.flywind.org/en/tapestryzzl
 
