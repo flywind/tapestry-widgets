@@ -41,6 +41,7 @@ Use maven install tapestry-widgets-1.0.jar, click here to download [http://www.f
 Just  add the following dependency in your `pom.xml`.
 	
 For Tapestry 5.4 users:
+
 	<dependencies>
 		...
 		<dependency>
