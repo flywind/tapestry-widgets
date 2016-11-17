@@ -1,0 +1,116 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<h3>FPaginate分页组件</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>source</td>
+      <td>List</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>source:分页的数据源</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>String</td>
+      <td></td>
+      <td>normal</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>size:分页的尺寸,默认:normal,类型有:large,small,mini</td>
+    </tr>
+    <tr>
+      <td>pageSize</td>
+      <td>int</td>
+      <td></td>
+      <td>5</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>pageSize:当前页显示的记录数</td>
+    </tr>
+    <tr>
+      <td>queryParams</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>queryParams:查询的参数,字段之间用英文逗号隔开</td>
+    </tr>
+    <tr>
+      <td>zone</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>zone:分页数据展示到ajax的zone区域</td>
+    </tr>
+  </tbody>
+</table>
+<t:form t:id="createForm" t:zone="formZone" autofocus="false" class="form-horizontal" style="width:800px;">
+<div class="form-group">
+	<label class="col-sm-2 control-label">用户名:</label>
+	<div class="col-sm-10">
+		<input class="form-control sm-w300" type="text" t:type="textfield" t:id="userName" value="example.userName" t:validate="required"/>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">创建人:</label>
+	<div class="col-sm-10">
+		<input class="form-control sm-w300" type="text" t:type="textfield" t:id="creater" value="example.creater"/>
+	</div>
+</div>
+<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-info btn-flat mr10">搜索</button>
+		</div>
+	</div>
+</t:form>
+
+<t:zone t:id="meZone" id="meZone">
+<table class="table">
+	<thead>
+    <tr>
+    	<th>编号</th>
+    	<th>用户名</th>
+    	<th>创建人</th>
+    	<th>客户代码</th>
+    	<th>最后更新时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    	<t:loop source="examples" value="example" t:empty="block:emptyBlock">
+    	<tr>
+    		<td>${example.id}</td>
+    		<td>${example.userName}</td>
+    		<td>${example.creater}</td>
+    		<td>${example.customerCode}</td>
+    		<td>${example.lastUpdateTime}</td>
+    	</tr>
+    	<t:block t:id="emptyBlock">
+    	<tr>
+    		<td colspan="5">无数据</td>
+    	</tr>
+    	</t:block>
+    	</t:loop>
+    </tbody>
+</table>
+</t:zone>
+<t:zone t:id="formZone" id="formZone">
+<t:widgets.fpaginate t:source="examples" t:id="glist" t:zone="meZone" t:pagesize="10" size="normal" queryParams="userName,creater"/>  
+</t:zone> 
+</html>

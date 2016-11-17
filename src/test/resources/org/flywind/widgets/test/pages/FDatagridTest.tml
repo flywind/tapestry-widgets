@@ -1,0 +1,426 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<h3>FDatagrid组件,该组件来源jquery easyui datagrid组件<a href="http://www.jeasyui.net/plugins/183.html" target="_blank">官方文档</a>,组件参数如下:</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>组件的t:id,用来实例化组件与被FDatagridBtn组件调用</td>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td>{'method':'POST','width':'auto','fit':true,'fitColumns':false,'pagination':true,'rownumbers':true,'loadMsg':messages.get("loading-data"),'remoteSort':false,'pageSize':10,'striped':true,'nowrap':true,'singleSelect':true,'zhCn':true}</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>griddata的默认参数,可以重新修改,更详细的参数说明请参考官方文档</td>
+    </tr>
+    <tr>
+      <td>singleSelect</td>
+      <td>boolean</td>
+      <td></td>
+      <td>true</td>
+      <td></td>
+      <td>1.0</td>
+      <td>singleSelect:datagrid的单选模式,默认为true</td>
+    </tr>
+    <tr>
+      <td>source</td>
+      <td>list</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>source代表数据源,必须是java list</td>
+    </tr>
+  </tbody>
+</table>
+<h3>FDatagridBtn组件,用来操作datagrid组件的添加、删除、更新.参数如下:</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>clientId</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>用来区分组件的id</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮的value的值</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>请求的地url址</td>
+    </tr>
+    <tr>
+      <td>gridId</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮点击之后去获取gridId的值对应的datagrid的id的数据</td>
+    </tr>
+    <tr>
+      <td>cls</td>
+      <td>String</td>
+      <td></td>
+      <td>btn</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮样式(class)名</td>
+    </tr>
+    <tr>
+      <td>itemcls</td>
+      <td>String</td>
+      <td></td>
+      <td>fa</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮图标样式(class)名</td>
+    </tr>
+    <tr>
+      <td>clientEvent</td>
+      <td>String</td>
+      <td></td>
+      <td>click</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮的事件默认是click事件,不建议进行修改,绝大多数是点击进行触发事件.</td>
+    </tr>
+    <tr>
+      <td>linkType</td>
+      <td>String</td>
+      <td></td>
+      <td>event</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮的类型,包含event:事件如点击按钮执行删除这个事件,在当前页面执行.page:执行页面跳转,如点击编辑按钮跳转到编辑页面,跳转转过程组件自动传递id的值.</td>
+    </tr>
+    <tr>
+      <td>zone</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>当linkType为event时.进行ajax的请求回调的zone名称.</td>
+    </tr>
+    <tr>
+      <td>alertMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>请选择至少一条记录(中文),Please select at least one record(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>alertMsg:无选择datagrid时,警告框的内容</td>
+    </tr>
+    <tr>
+      <td>alertTitle</td>
+      <td>String</td>
+      <td></td>
+      <td>温馨提示(中文),Tips(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>alertTitle:无选择datagrid时,警告框的标题</td>
+    </tr>
+    <tr>
+      <td>confirmTitle</td>
+      <td>String</td>
+      <td></td>
+      <td>确认信息(中文),Confirmation(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>confirmTitle:确认框的标题</td>
+    </tr>
+    <tr>
+      <td>confirmMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>您确定吗?(中文),Are you sure?(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>confirmMsg:确认框的内容</td>
+    </tr>
+    <tr>
+      <td>submitMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>确认(中文),Ok(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>submitMsg:确认框按钮的文字</td>
+    </tr>
+    <tr>
+      <td>cancelMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>取消(中文),Cancel(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>cancelMsg:确认框取消按钮的文字</td>
+    </tr>
+  </tbody>
+</table>
+<h3>FDialogGridLink</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>clientId</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>用来区分组件的id</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮的value的值</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>请求的地url址</td>
+    </tr>
+    <tr>
+      <td>gridId</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮点击之后去获取gridId的值对应的datagrid的id的数据</td>
+    </tr>
+    <tr>
+      <td>cls</td>
+      <td>String</td>
+      <td></td>
+      <td>btn</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮样式(class)名</td>
+    </tr>
+    <tr>
+      <td>itemcls</td>
+      <td>String</td>
+      <td></td>
+      <td>fa</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮图标样式(class)名</td>
+    </tr>
+    <tr>
+      <td>clientEvent</td>
+      <td>String</td>
+      <td></td>
+      <td>click</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮的事件默认是click事件,不建议进行修改,绝大多数是点击进行触发事件.</td>
+    </tr>
+    <tr>
+      <td>linkType</td>
+      <td>String</td>
+      <td></td>
+      <td>event</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>按钮的类型,包含event:事件如点击按钮执行删除这个事件,在当前页面执行.page:执行页面跳转,如点击编辑按钮跳转到编辑页面,跳转转过程组件自动传递id的值.</td>
+    </tr>
+    <tr>
+      <td>zone</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>当linkType为event时.进行ajax的请求回调的zone名称.</td>
+    </tr>
+    <tr>
+      <td>alertMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>请选择至少一条记录(中文),Please select at least one record(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>alertMsg:无选择datagrid时,警告框的内容</td>
+    </tr>
+    <tr>
+      <td>alertTitle</td>
+      <td>String</td>
+      <td></td>
+      <td>温馨提示(中文),Tips(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>alertTitle:无选择datagrid时,警告框的标题</td>
+    </tr>
+    <tr>
+      <td>confirmTitle</td>
+      <td>String</td>
+      <td></td>
+      <td>确认信息(中文),Confirmation(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>confirmTitle:确认框的标题</td>
+    </tr>
+    <tr>
+      <td>confirmMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>您确定吗?(中文),Are you sure?(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>confirmMsg:确认框的内容</td>
+    </tr>
+    <tr>
+      <td>submitMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>确认(中文),Ok(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>submitMsg:确认框按钮的文字</td>
+    </tr>
+    <tr>
+      <td>cancelMsg</td>
+      <td>String</td>
+      <td></td>
+      <td>取消(中文),Cancel(英文)</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>cancelMsg:确认框取消按钮的文字</td>
+    </tr>
+  </tbody>
+</table>
+<form class="form-inline" t:type="form" role="form" t:zone="zoneOne" t:autofocus="false">
+			<div class="form-group">
+				<label class="control-label">用户名<span class="mr5">:</span></label>
+				<input class="iw120 form-control" type="text" placeholder="输入用户名" t:type="textfield" t:id="userName"/>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-block btn-info btn-flat">搜索</button>
+			</div>
+</form>
+<div class="btn-box">
+	         <div class="btn-group mr10">
+	           <t:widgets.fdatagridbtn t:clientId="edit" linkType="page" text="编辑" url="FDatagridModeTest" gridId="newContracts"/>
+	         </div>
+	         <div class="btn-group mr10">
+	           <t:widgets.fdatagridbtn t:clientId="edit5" linkType="page" paramsMode="true" text="编辑" url="FDatagridTest4" gridId="newContracts"/>
+	         </div>
+	         <div class="btn-group mr10">
+	         	<t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="删除" url="${delUrl}" alertMsg="没有选择" gridId="newContracts" />
+	         </div>
+</div>
+<t:zone t:id="zoneOne" id="zoneOne" style="height:500px">
+<table t:type="widgets/fdatagrid" t:id="newContracts" t:source="examples" t:pageSize="20">
+	<thead>
+		<tr>
+			<th data-options="field:'id',width:80,title:'编号',sortable:true"></th>
+			<th data-options='field:"creater",width:300,title:"创建者",
+							  formatter:function(value,row){
+							  	if(row.creater == "kitty"){
+							  		
+							  		return row.creater+" &lt;a&gt;htttt&lt;/a&gt;";
+							  	}else{
+							  		return row.creater+" world";
+							  	}
+							  }'></th>
+		    <th data-options="field:'customerCode',width:80,title:'客户代码'"></th>
+		    <th data-options="field:'userName',width:80,title:'${message:userName-label}'"></th>
+		    <th data-options="field:'createTime',width:150,title:'创建时间'"></th>
+		    <th data-options="field:'lastUpdateTime',width:150,title:'更新时间'"></th>
+		    <th data-options="field:'lastUpdatePerson',width:80,title:'更新人'"></th>
+		</tr>
+	</thead>
+</table>
+</t:zone>
+<div class="btn-box">
+	<div class="btn-group mr10"><t:widgets.fdatagridbtn t:clientId="editT" linkType="page"  text="编辑" url="FDatagridTest2" gridId="newContracts2"/></div>
+	<div class="btn-group mr10"><t:widgets.fdatagridbtn t:clientId="deleteT" zone="zoneTwo"  text="删除" url="${deleteUrl}" alertMsg="没有选择任何数据" gridId="newContracts2" /></div>
+	<div class="btn-group mr10"><t:widgets.FDialogGridLink t:clientId="editTwo333" zone="zoneTwo" text="dialog查询" url="${deleteUrl}" dialog="medialog" gridId="newContracts2"/></div>
+</div>
+<t:zone t:id="zoneTwo" id="zoneTwo" style="height:500px;">
+<table t:type="widgets/fdatagrid" t:id="newContracts2" t:source="examples">
+	<thead>
+		<tr>
+			<th data-options="field:'userName',width:80,title:'用户名',sortable:true"></th>
+			<th data-options="field:'creater',width:80,title:'创建者'"></th>
+		</tr>
+	</thead>
+</table>
+</t:zone>
+<t:widgets.fdialog t:clientId="medialog" t:params="{'width':1000,'height':400}">
+	<table t:type="widgets/fdatagrid" t:id="newContracts3" t:source="examples" t:params="{'singleSelect':false,'checkOnSelect':true,'selectOnCheck':true}" t:singleSelect="false">
+		<thead>
+			<tr>
+				<th data-options="field:'ck','checkbox':true"></th>
+				<th data-options="field:'userName',width:80,title:'用户名'"></th>
+				<th data-options="field:'creater',width:80,title:'创建者'"></th>
+			</tr>
+		</thead>
+	</table>
+</t:widgets.fdialog>
+</html>

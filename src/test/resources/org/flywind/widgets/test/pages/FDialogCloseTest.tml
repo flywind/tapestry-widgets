@@ -1,0 +1,58 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+      <h3>FDialogClose组件,用来关闭弹层</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dialog</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>dialog:关闭那个弹出层</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--  <p><t:widgets.fdialoglink t:dialog="mydialog">open id is #mydialog dialog</t:widgets.fdialoglink></p>  
+ ${name}   
+<t:widgets.fdialog t:clientId="mydialog" t:params="{'title':'hello'}" t:cls="box">
+	<div style="height:600px;width:300px;">
+		<t:Form t:id="form1">
+			<t:TextField t:id="name"/>
+			<t:Submit t:mixins="widgets/fdialogclose" fdialogclose.dialog="mydialog" value="submit"/>
+			<t:EventLink t:event="cancel" t:mixins="widgets/fdialogclose" fdialogclose.dialog="mydialog">cancel</t:EventLink>
+		</t:Form>
+		
+	</div>
+</t:widgets.fdialog> -->
+ <p><t:widgets.fdialoglink t:dialog="mydialog2">open id is #mydialog dialog</t:widgets.fdialoglink></p> 
+<t:zone t:id="meZone" id="meZone">
+${name2}
+<t:widgets.fdialog t:clientId="mydialog2" t:params="{'title':'hello'}" t:cls="box">
+	<div style="height:600px;width:300px;" t:zone="meZone">
+		<t:Form t:id="form2">
+			<t:TextField t:id="name2"/>
+			<!-- <t:Submit t:mixins="widgets/fdialogajaxclose" fdialogajaxclose.dialog="mydialog" fdialogajaxclose.zone="meZone" value="submit"/> -->
+			<t:any t:mixins="widgets/fdialogajaxclose" fdialogajaxclose.dialog="mydialog2" t:zone="meZone">cancel</t:any>
+		</t:Form>	
+	</div>
+</t:widgets.fdialog>
+</t:zone>
+
+
+ 
+      
+      </html>

@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
+      <w:fartdialog t:clientId="medialog">
+      	<div style="width:600px;height:300px;padding:20px;">我是弹出层<a href="#;" id="close">close</a><w:fartdialogclose t:close="medialog">再次关闭</w:fartdialogclose></div>
+      </w:fartdialog>
+      <w:fartdialoglink t:dialog="medialog">打开</w:fartdialoglink>
+      <div id="show">显示</div>
+</html>

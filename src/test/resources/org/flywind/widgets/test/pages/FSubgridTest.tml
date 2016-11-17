@@ -1,0 +1,20 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+ <div id="selectCondition">
+ <div class="btn-group mr10">
+	  <t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="删除" url="${delUrl}" alertMsg="没有选择" gridId="newContracts2" />
+</div>
+ </div><!-- selectCondition end -->
+ <t:zone t:id="zoneOne" id="zoneOne">
+ <div id="gridContent">
+<table t:type="widgets/fsubgrid" t:id="newContracts2" t:source="examples" t:subUrl="${url}" t:subColumns="${opts}" t:fixLayout="true">
+	<thead>
+		<tr>
+			<th data-options="field:'userName',width:150,title:'用户名'"></th>
+			<th data-options="field:'creater',width:300,title:'创建者'"></th>
+		</tr>
+	</thead>
+</table>
+</div>
+</t:zone>
+</html>

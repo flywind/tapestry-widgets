@@ -1,0 +1,10 @@
+.fpaginate .btn{
+	 border: 1px solid #E5E5E5;
+	 background-color: #fff;
+	 border-radius: 0px;
+}
+
+.fpaginate .current{
+	background-color: #00c0ef;
+    border-color: #00acd6;
+}

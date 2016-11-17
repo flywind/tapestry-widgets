@@ -1,0 +1,111 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
+<h3>FAjaxUpload组件,Ajax上传组件参数如下:</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>multiple</td>
+      <td>boolean</td>
+      <td></td>
+      <td>false</td>
+      <td></td>
+      <td>1.0</td>
+      <td>multiple:true时表示支持多文件上传,默认为false(单文件上传)</td>
+    </tr>
+    <tr>
+      <td>allowedExtensions</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>allowedExtensions:定义上传格式,如:[jpg, png, gif]</td>
+    </tr>
+    <tr>
+      <td>sizeLimit</td>
+      <td>String</td>
+      <td></td>
+      <td>0</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>sizeLimit:文件大小限制,默认0表示没有限制,如:1M,单位:M,K,G</td>
+    </tr>
+    <tr>
+      <td>maxConnections</td>
+      <td>int</td>
+      <td></td>
+      <td>3</td>
+      <td></td>
+      <td>1.0</td>
+      <td>maxConnections:限制并行上传量,默认3</td>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>params:上传的参数,可以重写</td>
+    </tr>
+    <tr>
+      <td>cls</td>
+      <td>String</td>
+      <td></td>
+      <td>btn btn-sm btn-info btn-flat</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>cls:上传按钮样式</td>
+    </tr>
+    <tr>
+      <td>itemcls</td>
+      <td>String</td>
+      <td></td>
+      <td>fa fa-upload mr5</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>itemcls:上传按钮图标样式</td>
+    </tr>
+  </tbody>
+</table>
+			<w:fajaxUpload t:id="uploadImage" t:multiple="true"
+				t:allowedExtensions="[jpg, png, gif]" t:sizeLimit="1M">
+			</w:fajaxUpload>
+			<w:fajaxUpload t:id="uploadImageTwo" t:multiple="false"
+				t:allowedExtensions="[jpg, png, gif]" t:sizeLimit="1M">
+			</w:fajaxUpload>
+
+			<t:zone t:id="uploadResult">
+					<t:if test="message">
+						<p>
+							<strong>${message}</strong>
+						</p>
+					</t:if>
+
+					<t:if test="uploadedFiles">
+						<t:grid source="uploadedFiles"></t:grid>
+					</t:if>
+			</t:zone>
+			<t:zone t:id="uploadImg">
+				<t:if test="uploadedFile">
+					${uploadedFile.filePath}
+				</t:if>
+			</t:zone>
+			<t:zone t:id="uploadImgNoAjax">
+				<t:if test="uploadedFile">
+					${uploadedFile.filePath}
+				</t:if>
+			</t:zone>
+		
+</html>

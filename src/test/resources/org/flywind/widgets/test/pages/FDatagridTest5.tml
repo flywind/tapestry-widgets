@@ -1,0 +1,53 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+
+<form class="form-inline" t:type="form" role="form" t:zone="zoneOne" t:autofocus="false">
+			<div class="form-group">
+				<label class="control-label">用户名<span class="mr5">:</span></label>
+				<input class="iw120 form-control" type="text" placeholder="输入用户名" t:type="textfield" t:id="userName"/>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-block btn-info btn-flat">搜索</button>
+			</div>
+</form>
+<div class="btn-box">
+	         <div class="btn-group mr10">
+	           <t:widgets.fdatagridbtn t:clientId="edit" linkType="page" text="编辑" url="FDatagridModeTest" gridId="newContracts"/>
+	         </div>
+	         <div class="btn-group mr10">
+	           <t:widgets.fdatagridbtn t:clientId="edit5" linkType="page" paramsMode="true" text="编辑" url="FDatagridTest4" gridId="newContracts"/>
+	         </div>
+	         <div class="btn-group mr10">
+	         	<t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="删除" url="${delUrl}" alertMsg="没有选择" gridId="newContracts" />
+	         </div>
+</div>
+<style>
+
+</style>
+<t:zone t:id="zoneOne" id="zoneOne" style="width:800px;height:500px;position:relative" data-datagrid-toggle="true">
+<table t:type="widgets/fdatagrid" t:id="newContracts" t:source="examples" t:pageSize="10" gcolumns="[
+{'field':'id','width':80,'title':'编号','sortable':true},
+{'field':'creater','width':300,'title':'创建者'}
+]">
+	<!-- <thead>
+		<tr>
+			<th data-options="field:'id',width:80,title:'编号',sortable:true"></th>
+			<th data-options='field:"creater",width:300,title:"创建者",
+							  formatter:function(value,row){
+							  	if(row.creater == "kitty"){
+							  		
+							  		return row.creater+" &lt;a&gt;htttt&lt;/a&gt;";
+							  	}else{
+							  		return row.creater+" world";
+							  	}
+							  }'></th>
+		    <th data-options="field:'customerCode',width:80,title:'客户代码'"></th>
+		    <th data-options="field:'userName',width:80,title:'${message:userName-label}'"></th>
+		    <th data-options="field:'createTime',width:150,title:'创建时间'"></th>
+		    <th data-options="field:'lastUpdateTime',width:150,title:'更新时间'"></th>
+		    <th data-options="field:'lastUpdatePerson',width:80,title:'更新人'"></th>
+		</tr>
+	</thead> -->
+</table>
+</t:zone>
+</html>

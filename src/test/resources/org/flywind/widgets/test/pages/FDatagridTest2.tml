@@ -1,0 +1,11 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<p>list<br/>
+<t:eventlink t:event="update" t:context="99">修改</t:eventlink>
+<t:eventlink t:event="create">添加</t:eventlink>
+<t:eventlink t:event="view" t:context="1">查看</t:eventlink></p>
+<t:if test="modeUpdate">${editorExampleId}修改modeUpdate</t:if>
+<t:if test="modeCreate">添加modeCreate</t:if>
+<t:if test="modeReview">${editorExampleId}查看modeReview</t:if>
+<!-- <p><t:eventlink t:event="show">show</t:eventlink></p> -->
+</html>

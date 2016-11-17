@@ -1,0 +1,25 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<div style="height:500px">
+<table t:type="widgets/ftreegrid" t:id="showdata" t:source="examples">
+	<thead>
+		<tr>
+			<!-- <th data-options="field:'userName',width:80,title:'用户名'"></th>
+			<th data-options="field:'creater',width:80,title:'创建者'"></th> -->
+			<th field="userName" width="200">用户名</th>
+			<th field="creater" width="200">创建者</th>
+		</tr>
+	</thead>
+</table>    
+</div> 
+<style>
+SPAN.tree-icon {
+    display: inline-block;
+    width: 16px;
+    height: 18px;
+    cursor: pointer;
+    background: url("/assets/meta/fb0dec4f/plugins/easyui/themes/bootstrap/images/tree_icons.png") no-repeat -208px 0;
+
+}
+</style>
+</html>

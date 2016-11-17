@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
+			data-options="singleSelect:true,collapsible:true,url:'${context:assets/datagrid_data1.json}',method:'get'">
+		<thead>
+			<tr>
+				<th data-options="field:'productid',width:100">Product</th>
+
+			</tr>
+		</thead>
+	</table>
+</html>

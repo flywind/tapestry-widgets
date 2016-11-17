@@ -1,0 +1,7 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+      <t:zone t:id="meZone" id="meZone">
+ ${id}
+ <t:eventlink t:event="clear" t:zone="meZone">clear</t:eventlink>
+ </t:zone>
+</html>

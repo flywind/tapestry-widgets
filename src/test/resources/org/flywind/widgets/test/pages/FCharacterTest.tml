@@ -1,0 +1,50 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td>space</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>html字符输出类型，默认值:"space"代表不换行符.其他类型有:leftQuotes(左引号),rightQuotes(右引号),brokenLine(破折线),shortBrokenLine(短破折线),
+      pound(英镑),euro(欧元),yen(日元),copy(版权),reg(注册商标),brand(商标)</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>html字符输出个数，如count="5"，代表重复输出5次</td>
+    </tr>
+  </tbody>
+</table>
+<p>Hello<t:widgets.fcharacter type="space" count="15"/>kitty.</p>
+<p>
+左引号:<t:widgets.fcharacter type="leftQuotes"/>
+右引号:<t:widgets.fcharacter type="rightQuotes"/>
+破折线:<t:widgets.fcharacter type="brokenLine"/>
+短破折线:<t:widgets.fcharacter type="shortBrokenLine"/>
+英镑:<t:widgets.fcharacter type="pound"/>
+欧元:<t:widgets.fcharacter type="euro"/>
+日元:<t:widgets.fcharacter type="yen"/>
+版权:<t:widgets.fcharacter type="copy"/>
+注册商标:<t:widgets.fcharacter type="reg"/>
+商标:<t:widgets.fcharacter type="brand"/>
+</p>
+</html>

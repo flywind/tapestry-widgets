@@ -1,0 +1,9 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+  <form action="UploadHander2" method="post" enctype="multipart/form-data" >  
+      <input type="file" name="filedata"/>  
+      <input type="submit" value="Submit" />        
+</form>    
+      
+      
+      </html>

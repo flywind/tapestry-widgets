@@ -1,0 +1,54 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+ <div id="selectCondition">
+
+<div class="btn-box">
+	         <div class="btn-group mr10">
+	           <t:widgets.fdatagridbtn t:clientId="edit" linkType="page"  text="编辑" url="FDatagridTest2" gridId="newContracts"/>
+	         </div>
+	         <div class="btn-group mr10">
+	         	<t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="删除" url="${delUrl}" alertMsg="没有选择" gridId="newContracts" />
+	         </div>
+</div>
+<div class="btn-group mr10">
+	         	<t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="删除" url="${delUrl}" alertMsg="没有选择" gridId="newContracts" />
+</div>
+<div class="btn-group mr10"><a href="#;" id="save">保存</a></div>
+</div><!-- selectCondition end -->
+<form id="sendData" method= "post" enctype ="multipart/form-data">
+<input type="hidden" id="ok"/>
+</form>
+<t:zone t:id="zoneOne" id="zoneOne">
+<div id="gridContent">
+<table t:type="widgets/fdatagrid" t:id="newContracts" t:source="examples" t:pageSize="20" t:fixLayout="true">
+	<thead>
+		<tr>
+			<th data-options="field:'id',width:80,sortable:true,title:'标题'"></th>
+			<th data-options="field:'companyId',width:300,title:'创建人',
+						formatter:function(value,row){
+                            return row.companyName;
+                        },editor:{
+                            type:'combobox',
+                            options:{
+                                valueField:'companyId',
+                                textField:'companyName',
+                                method:'get',
+                                url:'${cbox}',
+                                required:true
+                            }
+                        }"></th>
+		    <th data-options="field:'isOpen',width:80,title:'是否显示',align:'center',editor:{type:'checkbox',options:{on:'true',off:'false'}}"></th>
+		    <th data-options="field:'customerCode',width:80,title:'客户代码',align:'right',editor:'numberbox'"></th>
+		    <th data-options="field:'userName',width:80,title:'用户名',editor:{type:'validatebox',options:{required:true}}"></th>
+		    <th data-options="field:'createTime',width:150,title:'创建时间'"></th>
+		    <th data-options="field:'lastUpdateTime',width:150,title:'更新时间'"></th>
+		    <th data-options="field:'lastUpdatePerson',width:80,title:'更新人'"></th>
+		</tr>
+	</thead>
+</table>
+</div><!-- gridCotent end -->
+</t:zone>
+
+
+
+</html>

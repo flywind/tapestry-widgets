@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+	<!-- <style>
+	iframe html,iframe body{height:100%;background:#666;}
+	</style> -->
+	<t:form  >
+		<t:textarea t:id="content" t:mixins="widgets/editor" style="height:200px;" editor.upImgUrl="UploadHander"/>
+		<t:submit value="Submit" />
+	</t:form>
+
+
+</html>

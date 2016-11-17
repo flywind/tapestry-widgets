@@ -1,0 +1,44 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<h3>FNumberbox组件</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>editable</td>
+      <td>boolean</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>editable:是否可编辑,默认:false</td>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>params:配置参数,<a href="http://jeasyui.com/documentation/index.php" target="_blank">详细参考官方文档</a></td>
+    </tr>
+  </tbody>
+</table>
+<t:form>
+<div style="width:150px;height:100px;background-color:#f6f6f6;">
+	<!-- <t:widgets.FNumberSpinner t:id="num"/> -->
+<t:textfield t:id="num" class="easyui-numberspinner" t:mixins="widgets/FNumberSpinner" t:validate="required"/>
+<t:submit/>
+</div>
+</t:form>
+</html>

@@ -1,0 +1,7 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<t:form>
+<t:TextField t:id="name" t:validate="required"/>
+<t:submit/>
+</t:form>
+</html>

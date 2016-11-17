@@ -1,0 +1,38 @@
+*{margin: 0;border: 0;padding: 0;}
+body{font:14px microsoft yahei;}
+.tapestry-tab {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+.tapestry-tab th {
+    padding: 3px;
+    border: 1px solid #569d2f;
+    background-color: #569d2f;
+    color: #fff;
+    text-align: left;
+    white-space: nowrap
+}
+
+.tapestry-tab td {
+    padding: 3px;
+    border: 1px solid #e2e2e2;
+    color: #000;
+    text-align: left;
+    white-space: normal
+}
+
+.tapestry-w {
+    width: 120px;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.tapestry-tab tfoot td {
+    font-weight: bold;
+    border: 1px solid #569d2f;
+    background-color: #569d2f;
+    color: #fff;
+    text-align: left
+}

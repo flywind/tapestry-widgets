@@ -1,0 +1,91 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>标志</th>
+      <th>默认</th>
+      <th>默认前缀</th>
+      <th>此版本开始</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>hover</td>
+      <td>boolean</td>
+      <td></td>
+      <td>false</td>
+      <td></td>
+      <td>1.0</td>
+      <td>hover:是否鼠标经过触发切换,hover:true时鼠标经过触发切换</td>
+    </tr>
+    <tr>
+      <td>tabStyle</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>tabStyle:标签页样式,有几种类型:plain,narrow,pill,justified</td>
+    </tr>
+    <tr>
+      <td>tabPosition</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>tabPosition:标签页位置,默认为top.类型有:top,bottom,left,right</td>
+    </tr>
+  </tbody>
+</table>
+	<div style="padding:30px;width:900px;height:200px;">
+	<p>tabStyle定义标签样式,有几种类型:plain,narrow,pill,justified</p>
+	<p>tabPosition:top,bottom,left,right</p>
+	<div t:type="widgets/ftabs" style="height:auto" t:tabStyle="justified" t:tabPosition="bottom">
+		<div title="中文" style="padding:10px">About me</div>
+		<div title="英文" style="padding:10px">Contact me工作需要</div>
+	</div>
+	</div>
+	<div t:type="widgets/ftabs" style="height:100px;" t:hover="true">
+		<div title="中文" style="padding:10px">About me</div>
+		<div title="英文" style="padding:10px">Contact me工作需要</div>
+	</div>
+	<div t:type="widgets/ftabs" style="height:200px;" t:hover="true">
+		<div title="Sub Tabs" style="padding:10px;">
+            <div class="easyui-tabs" data-options="fit:true,plain:true">
+                <div title="Title1" style="padding:10px;">Content 1</div>
+                <div title="Title2" style="padding:10px;">Content 2</div>
+                <div title="Title3" style="padding:10px;">Content 3</div>
+            </div>
+        </div>
+        <div title="Ajax" data-options="href:'_content.html',closable:true" style="padding:10px"></div>
+        <div title="Iframe" data-options="closable:true" style="overflow:hidden">
+            <iframe scrolling="yes" frameborder="0"  src="http://www.jeasyui.com/forum/index.php" style="width:100%;height:100%;"></iframe>
+        </div>
+	</div>
+	<div t:type="widgets/ftabs" style="height:200px;" t:hover="true">
+		<div title="About" data-options="tools:'#p-tools'" style="padding:10px">
+            <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
+            <ul>
+                <li>easyui is a collection of user-interface plugin based on jQuery.</li>
+                <li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
+                <li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
+                <li>complete framework for HTML5 web page.</li>
+                <li>easyui save your time and scales while developing your products.</li>
+                <li>easyui is very easy but powerful.</li>
+            </ul>
+        </div>
+        <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+            This is the help content.
+        </div>
+	</div>
+	<div id="p-tools">
+        <a href="javascript:void(0)" class="icon-mini-add" onclick="alert('add')"></a>
+        <a href="javascript:void(0)" class="icon-mini-edit" onclick="alert('edit')"></a>
+        <a href="javascript:void(0)" class="icon-mini-refresh" onclick="alert('refresh')"></a>
+    </div>
+</html>

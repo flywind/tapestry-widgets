@@ -1,0 +1,267 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.flywind</groupId>
+    <artifactId>tapestry-widgets</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>tapestry-widgets Tapestry 5 Application</name>
+        <dependencies>
+    <dependency>
+      <groupId>org.apache.tapestry</groupId>
+      <artifactId>tapestry-core</artifactId>
+      <version>${tapestry-release-version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.tapestry</groupId>
+      <artifactId>tapestry-spring</artifactId>
+      <version>${tapestry-release-version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.tapestry</groupId>
+      <artifactId>tapestry-upload</artifactId>
+      <version>${tapestry-release-version}</version>
+    </dependency>
+    
+    <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+		</dependency>
+ 
+    <dependency>
+			<groupId>org.tynamo</groupId>
+			<artifactId>tynamo-common</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.tynamo</groupId>
+			<artifactId>tynamo-test</artifactId>
+			<version>0.1.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 加入log4依赖包 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.log4j12.verison}</version>
+		</dependency>
+		
+		<!-- UTILS begin -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- UTILS end -->
+        <!-- json处理jar -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        <dependency>
+            <groupId>xom</groupId>
+            <artifactId>xom</artifactId>
+            <version>1.2.5</version>
+	        <exclusions>  
+	            <exclusion>
+	                <artifactId>xml-apis</artifactId>  
+	                <groupId>xml-apis</groupId>
+	            </exclusion>
+	            <exclusion>  
+                    <artifactId>xerces</artifactId>  
+                    <groupId>xercesImpl</groupId>
+                </exclusion>
+                <exclusion>  
+                    <artifactId>xalan</artifactId>  
+                    <groupId>xalan</groupId>
+                </exclusion>
+	        </exclusions>
+        </dependency>
+        <!-- json处理jar -->
+		
+		<!-- spring框架jar包 start -->
+		<!-- 加入spring mvc依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- 加入spring-orm依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- 加入spring-beans依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		   
+		<!-- 加入spring-context-support依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- 加入spring测试依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- 加入MySQL数据库连接的依赖包 start-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.17</version>
+		</dependency>
+		<!-- 加入MySQL数据库连接的依赖包 end-->
+
+		<!-- 加入druid依赖包 start-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>0.2.23</version>
+		</dependency>
+		<!-- 加入druid依赖包 end-->
+		
+		<!-- 加入hibernate-core依赖包 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
+		<!-- Spring AOP start -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- Spring AOP end -->
+		
+		<!-- 加入fastjson依赖包  start-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.verison}</version>
+		</dependency>
+		<!-- 加入fastjson依赖包  end-->
+		
+		<!-- <dependency>
+		  <groupId>org.tynamo</groupId>
+		  <artifactId>tapestry-ckeditor</artifactId>
+		  <version>0.0.1</version>
+		</dependency> -->
+        
+  </dependencies>
+ 
+  <build>
+  <finalName>tapestry-widgets</finalName>
+  		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+    <plugins>
+      <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/conf/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<argLine>-Xmx500m</argLine>
+					<redirectTestOutputToFile>false</redirectTestOutputToFile>
+				</configuration>
+			</plugin>
+ 
+      <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-jar-plugin</artifactId>
+           <configuration>
+           <archive>
+             <manifestEntries>
+               <Tapestry-Module-Classes>org.flywind.widgets.services.WidgetModule</Tapestry-Module-Classes>
+             </manifestEntries>
+           </archive>
+           </configuration>
+       </plugin>
+       
+       <plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.4.v20141103</version>
+				<configuration>
+					<contextPath>/</contextPath>
+					<useTestClasspath>true</useTestClasspath>
+					<webAppSourceDirectory>${basedir}/src/test/webapp</webAppSourceDirectory>
+					<systemProperties>
+						<systemProperty>
+							<name>jetty.port</name>
+							<value>666</value>
+						</systemProperty>
+						<systemProperty>
+							<name>tapestry.compress-whitespace</name>
+							<value>false</value>
+						</systemProperty>
+						<systemProperty>
+							<name>tapestry.production-mode</name>
+							<value>false</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+ 
+    </plugins>
+  </build>
+  <properties>
+    <tapestry-release-version>5.4.1</tapestry-release-version>
+    <javax.servlet.version>2.5</javax.servlet.version>
+    <slf4j.log4j12.verison>1.7.5</slf4j.log4j12.verison>
+    <commons-lang3.version>3.1</commons-lang3.version>
+    <spring.version>4.0.3.RELEASE</spring.version>
+    <cms.business.version>1.0-SNAPSHOT</cms.business.version>
+    <hibernate.version>4.3.6.Final</hibernate.version>
+    <aspectj.version>1.7.3</aspectj.version>
+    <fastjson.verison>1.1.37</fastjson.verison>
+  </properties>
+</project>
