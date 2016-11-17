@@ -3,6 +3,8 @@
 ## Demo and documentation
 http://www.flywind.org/en/tapestryzzl
 
+Tapestry5 programming technology exchange:QQ group 41138107
+
 Exclusive jQuery components : 
 
 - **FAjaxUpload** 
