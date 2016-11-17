@@ -1,5 +1,5 @@
 # Tapestry 5.4.* integration jQuery component - 1.0
-test
+
 ## Demo and documentation
 http://www.flywind.org/en/tapestryzzl
 
@@ -34,7 +34,7 @@ Exclusive jQuery Mixins :
 
 ## How to use it
 
-Use maven install tapestry-widgets-1.0.jar, click here to download [http://www.jeasyui.com/documentation/index.php](http://www.jeasyui.com/documentation/index.php)
+Use maven install tapestry-widgets-1.0.jar, click here to download [http://www.flywind.org/uploadImages/other/tapestryWidgets.zip](tapestry-widgets-1.0.jar)
 
 	mvn install:install-file -DgroupId=org.flywind.tapestry -DartifactId=tapestry-widgets -Dpackaging=jar -Dversion=1.0 -DgeneratePon=true -Dfile=d:/tapestry-widgets-1.0.jar
 
