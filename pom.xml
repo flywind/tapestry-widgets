@@ -186,6 +186,12 @@
 		</dependency>
 		<!-- 加入fastjson依赖包  end-->
 		
+		<dependency>
+		    <groupId>org.apache.tapestry</groupId>
+		    <artifactId>tapestry-webresources</artifactId>
+		    <version>5.4.1</version>
+		</dependency>
+		
 		<!-- <dependency>
 		  <groupId>org.tynamo</groupId>
 		  <artifactId>tapestry-ckeditor</artifactId>
