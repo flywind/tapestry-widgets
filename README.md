@@ -13,7 +13,7 @@ Exclusive jQuery components :
 	- Based on [http://demo.jb51.net/js/2011/artDialog/_doc/labs.html](http://demo.jb51.net/js/2011/artDialog/_doc/labs.html)
 - **FCharacter**
 	- Based on [http://www.flywind.org/en/start](http://www.flywind.org/en/start)
-- **FDatagrid,FSubgrid,FDatagridBtn,FDialog,FDialogAjaxLink,FDialogGridLink,FDialogLink,FTabs**
+- **FDatagrid,FSubgrid,FDatagridBtn,FTabs**
 	- based on [http://www.jeasyui.com/documentation/index.php](http://www.jeasyui.com/documentation/index.php)
 - **FPaginate** 
 	- based on [https://github.com/lyonlai/bootstrap-paginator](https://github.com/lyonlai/bootstrap-paginator)
