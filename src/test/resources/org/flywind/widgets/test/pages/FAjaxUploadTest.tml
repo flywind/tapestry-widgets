@@ -87,6 +87,7 @@
       <td>${message:desc8}</td>
     </tr>
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 			<w:fajaxUpload t:id="uploadImage" t:multiple="true"
 				t:allowedExtensions="[jpg, png, gif]" t:sizeLimit="1M">

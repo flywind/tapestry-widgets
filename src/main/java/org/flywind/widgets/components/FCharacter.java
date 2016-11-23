@@ -16,10 +16,22 @@ import org.apache.tapestry5.annotations.Property;
  */
 public class FCharacter {
 
+	/**
+	 * 字符值,默认:space
+	 * 
+	 * en *
+	 * Sign value. Default:space
+	 */
 	@Property
 	@Parameter(value="space",required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String type;
 	
+	/**
+	 * 字符重复出现的次数
+	 * 
+	 * en *
+	 * The number of characters to be repeated.
+	 */
 	@Parameter(value="1")
 	private int count;
 	

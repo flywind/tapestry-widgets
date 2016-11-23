@@ -25,6 +25,7 @@
       <td>${message:desc1}</td>
     </tr> 
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 <h4>FArtDialogClose params:</h4>
 <table class="tapestry-tab" border="0">
@@ -59,6 +60,7 @@
       <td>${message:desc3}</td>
     </tr> 
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 <h4>FArtDialogLink params:</h4>
 <table class="tapestry-tab" border="0">
@@ -102,6 +104,7 @@
       <td>${message:desc6}</td>
     </tr> 
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 
       <w:fartdialog t:clientId="medialog">
