@@ -40,20 +40,36 @@ import org.flywind.widgets.utils.JQueryUtils;
  * @since 1.0
  */
 @Events( { WidgetSymbolConstants.AJAX_UPLOAD, WidgetSymbolConstants.NON_XHR_UPLOAD } )
-@Import(stylesheet = "${widget.plugins.assets.path}/jquery/ui/fileupload/fileuploader.css")
+@Import(stylesheet = {"${widget.plugins.assets.path}/jquery/ui/fileupload/fileuploader.css",
+		"${widget.plugins.assets.path}/artdialog/skin/default.css"})
 public class FAjaxUpload extends AbstractExtendableComponent {
 
     /**
      * zone回调.
      * JSON 响应 { UPDATE_ZONE_CALLBACK : { url : /your_event_callback_url/, params : /any_custom_params/ } }
+     * 
+     * en *
+     * Event zone call back
+     * JSON response { UPDATE_ZONE_CALLBACK : { url : /your_event_callback_url/, params : /any_custom_params/ } }
      */
     public static final String UPDATE_ZONE_CALLBACK = "updateZone";
 
+    /**
+     * 文件单位
+     * K=KB,M=MB,G=GB
+     * 
+     * en *
+     * File unti
+     * K=KB,M=MB,G=GB
+     */
     private static final String[] UNITS = new String[] {"K", "M", "G"};
 
     /**
      * (可选, 默认: false)
      * multiple为true时支持多文件上传.
+     * 
+     * en *
+     * If true, support multi file upload.Default:false
      */
     @Parameter(value = "false")
     private boolean multiple;
@@ -61,6 +77,9 @@ public class FAjaxUpload extends AbstractExtendableComponent {
     /**
      * (可选, 默认是所有格式)
      * 定义上传格式.
+     * 
+     * en *
+     * Allowed upload file format
      */
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String allowedExtensions;
@@ -68,6 +87,9 @@ public class FAjaxUpload extends AbstractExtendableComponent {
     /**
      * (可选, 默认: 0 = 无限制)
      * 文件大小限制.
+     * 
+     * en *
+     * File size limit, 0 = No size limit
      */
     @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "0")
     private String sizeLimit;
@@ -75,34 +97,55 @@ public class FAjaxUpload extends AbstractExtendableComponent {
     /**
      * (可选, 默认: 3)
      * 限制并行上传量.
+     * 
+     * en *
+     * File upload max connections
      */
     @Parameter(value = "3")
     private int maxConnections;
     
     /**
      * 上传按钮的文字
+     * 
+     * en *
+     * Upload button label
      */
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String uploadLabel;
 
     /**
      * 上传参数
+     * 
+     * en *
+     * Upload file params
      */
     @Parameter
     private JSONObject params;
     
     /**
      * 上传按钮样式
+     * 
+     * en *
+     * Upload button css class name
      */
     @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "btn btn-sm btn-info btn-flat")
     private String cls;
     
     /**
      * 上传按钮图标样式
+     * 
+     * en *
+     * Upload button icon css class name
      */
     @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "fa fa-upload mr5")
     private String itemcls;
 
+    /**
+     * 需要传递的上下文
+     * 
+     * en *
+     * Context
+     */
     @Parameter
     private Object[] context;
     
@@ -123,9 +166,6 @@ public class FAjaxUpload extends AbstractExtendableComponent {
 
     @Inject
     private Messages messages;
-
-    @InjectComponent
-    private FDialog uploadErrorMesages;
 
     @Inject
     private AjaxResponseRenderer ajaxResponseRenderer;
@@ -156,7 +196,6 @@ public class FAjaxUpload extends AbstractExtendableComponent {
         final JSONObject parameter = new JSONObject()
                 .put("elementId", getClientId())
                 .put("action", resources.createEventLink(WidgetSymbolConstants.FILE_UPLOAD, context).toURI())
-                .put("showMessagesDialog", uploadErrorMesages.getClientId())
                 .put("messages", uploadMessages)
                 .put("multiple", multiple)
                 .put("sizeLimit", sizeLimit)
@@ -176,6 +215,9 @@ public class FAjaxUpload extends AbstractExtendableComponent {
 
     /**
      * 限制文件大小.
+     * 
+     * en *
+     * File size limit
      */
     private long calculateSizeLimit() {
 

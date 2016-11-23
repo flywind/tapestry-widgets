@@ -1,16 +1,16 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
-<h3>FAjaxUpload组件,Ajax上传组件参数如下:</h3>
+<h3>${message:compoment-desc}</h3>
 <table class="tapestry-tab" border="0">
   <thead>
     <tr>
-      <th>名称</th>
-      <th>类型</th>
-      <th>标志</th>
-      <th>默认</th>
-      <th>默认前缀</th>
-      <th>此版本开始</th>
-      <th>描述</th>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +21,7 @@
       <td>false</td>
       <td></td>
       <td>1.0</td>
-      <td>multiple:true时表示支持多文件上传,默认为false(单文件上传)</td>
+      <td>${message:desc1}</td>
     </tr>
     <tr>
       <td>allowedExtensions</td>
@@ -30,7 +30,7 @@
       <td></td>
       <td>literal</td>
       <td>1.0</td>
-      <td>allowedExtensions:定义上传格式,如:[jpg, png, gif]</td>
+      <td>${message:desc2}</td>
     </tr>
     <tr>
       <td>sizeLimit</td>
@@ -39,7 +39,7 @@
       <td>0</td>
       <td>literal</td>
       <td>1.0</td>
-      <td>sizeLimit:文件大小限制,默认0表示没有限制,如:1M,单位:M,K,G</td>
+      <td>${message:desc3}</td>
     </tr>
     <tr>
       <td>maxConnections</td>
@@ -48,7 +48,7 @@
       <td>3</td>
       <td></td>
       <td>1.0</td>
-      <td>maxConnections:限制并行上传量,默认3</td>
+      <td>${message:desc4}</td>
     </tr>
     <tr>
       <td>params</td>
@@ -57,7 +57,7 @@
       <td></td>
       <td></td>
       <td>1.0</td>
-      <td>params:上传的参数,可以重写</td>
+      <td>${message:desc5}</td>
     </tr>
     <tr>
       <td>cls</td>
@@ -66,7 +66,7 @@
       <td>btn btn-sm btn-info btn-flat</td>
       <td>literal</td>
       <td>1.0</td>
-      <td>cls:上传按钮样式</td>
+      <td>${message:desc6}</td>
     </tr>
     <tr>
       <td>itemcls</td>
@@ -75,7 +75,16 @@
       <td>fa fa-upload mr5</td>
       <td>literal</td>
       <td>1.0</td>
-      <td>itemcls:上传按钮图标样式</td>
+      <td>${message:desc7}</td>
+    </tr>
+    <tr>
+      <td>uploadLabel</td>
+      <td>String</td>
+      <td></td>
+      <td>Upload</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc8}</td>
     </tr>
   </tbody>
 </table>

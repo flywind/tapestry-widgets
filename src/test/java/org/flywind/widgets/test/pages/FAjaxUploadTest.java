@@ -62,7 +62,7 @@ public class FAjaxUploadTest extends AppBase {
         renderer.addRender("uploadImg", uploadImg.getBody());
     }
     
-    //为了支持ie
+    //For ie8
     @OnEvent(component = "uploadImageTwo", value = WidgetSymbolConstants.NON_XHR_UPLOAD)
     Object onImageUploadTwoNoAjax(UploadedFile uploadedFile) {	
     	File copied = new File("d:\\" + uploadedFile.getFileName());
@@ -81,12 +81,12 @@ public class FAjaxUploadTest extends AppBase {
     }
 
     void onMyEvent(String messages){
-    	message = "文件上传异常: " + messages;
+    	message = "Error: " + messages;
         renderer.addRender("uploadImgNoAjax", uploadImgNoAjax.getBody());
     }
     
     void onUploadException(FileUploadException ex) {
-        message = "文件上传异常: " + ex.getMessage();
+        message = "Error: " + ex.getMessage();
         renderer.addRender("uploadImg", uploadImg.getBody());
         renderer.addRender("uploadResult", uploadResult.getBody());
     }

@@ -7,8 +7,6 @@ import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Local;
-import org.apache.tapestry5.services.ApplicationStateContribution;
-import org.apache.tapestry5.services.ApplicationStateCreator;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.RequestFilter;
 import org.apache.tapestry5.services.RequestHandler;
@@ -37,10 +35,10 @@ public class AppModule
             MappedConfiguration<String, Object> configuration)
     {
         configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en,zh_CN");
-        configuration.add(SymbolConstants.PRODUCTION_MODE, true);
-        configuration.add(SymbolConstants.COMPACT_JSON, true);
-        configuration.add(SymbolConstants.COMBINE_SCRIPTS, true);
-        configuration.add(SymbolConstants.MINIFICATION_ENABLED, true);
+        configuration.add(SymbolConstants.PRODUCTION_MODE, false);
+        configuration.add(SymbolConstants.COMPACT_JSON, false);
+        configuration.add(SymbolConstants.COMBINE_SCRIPTS, false);
+        configuration.add(SymbolConstants.MINIFICATION_ENABLED, false);
         configuration.add(SymbolConstants.ASSET_URL_FULL_QUALIFIED, true);
         configuration.add(SymbolConstants.HMAC_PASSPHRASE, "testing, testing, 1... 2... 3...");
         
