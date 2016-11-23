@@ -38,48 +38,71 @@ public class FPaginate implements ClientElement {
 	
 	/**
 	 * 客户端id,组件识别的id
+	 * 
+	 * en *
+	 * Client id
 	 */
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String clientId;
 	
 	/**
 	 * ajax作用区域
+	 * 
+	 * en *
+	 * Updated zone's id
 	 */
 	@Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     private String zone;
     
     /**
      * 查询参数
+     * 
+     * en *
+     * Form query params,examples:username,age
      */
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String queryParams;
 
 	/**
 	 * 组件参数
+	 * 
+	 * en *
+	 * Paginate params
 	 */
 	@Parameter
     private JSONObject params;
 	
 	/**
 	 * 当前页显示的记录数
+	 * 
+	 * en *
+	 * Page size
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private int pageSize = 5;
 	
 	/**
 	 * 总页数
+	 * 
+	 * en *
+	 * Total pages
 	 */
 	@Property
 	private int totalPages;
 	
 	/**
 	 * 分页大小,默认:normal,类型有:large,small,mini
+	 * 
+	 * Size,has large,small,mini,normal.Default:normal
 	 */
 	@Parameter(value="normal",defaultPrefix=BindingConstants.LITERAL)
 	private String size;
 	
 	/**
      * 数据源
+     * 
+     * en *
+     * Data source
      */
     @SuppressWarnings("rawtypes")
 	@Parameter(required = true, autoconnect = true)
@@ -97,9 +120,6 @@ public class FPaginate implements ClientElement {
     @Parameter(name = "secure", defaultPrefix = BindingConstants.LITERAL, value = "false")
     private boolean secure;
     
-    /**
-	 *重写客户端id
-	 */
 	@Override
     public String getClientId() {
         if(InternalUtils.isBlank(clientId)) {
