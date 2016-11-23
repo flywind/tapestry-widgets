@@ -1,8 +1,112 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
+      <h3>${message:compoment-desc}</h3>
+<h4>FArtDialog params:</h4>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>clientId</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc1}</td>
+    </tr> 
+  </tbody>
+</table>
+<h4>FArtDialogClose params:</h4>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>close</td>
+      <td>String</td>
+      <td>required=true</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc2}</td>
+    </tr> 
+    <tr>
+      <td>cls</td>
+      <td>String</td>
+      <td></td>
+      <td>btn</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc3}</td>
+    </tr> 
+  </tbody>
+</table>
+<h4>FArtDialogLink params:</h4>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dialog</td>
+      <td>String</td>
+      <td>required=true</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc4}</td>
+    </tr> 
+    <tr>
+      <td>cls</td>
+      <td>String</td>
+      <td></td>
+      <td>btn</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc5}</td>
+    </tr> 
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>${message:desc6}</td>
+    </tr> 
+  </tbody>
+</table>
+
       <w:fartdialog t:clientId="medialog">
-      	<div style="width:600px;height:300px;padding:20px;">我是弹出层<a href="#;" id="close">close</a><w:fartdialogclose t:close="medialog">再次关闭</w:fartdialogclose></div>
+      	<div style="width:600px;height:300px;padding:20px;">Dialog content.....<a href="#;" id="close">Close this dialog</a><w:fartdialogclose t:close="medialog">Angin close dialog</w:fartdialogclose></div>
       </w:fartdialog>
-      <w:fartdialoglink t:dialog="medialog">打开</w:fartdialoglink>
-      <div id="show">显示</div>
+      <w:fartdialoglink t:dialog="medialog">Open dialog</w:fartdialoglink>
+      <div id="show">Click here to open dialog</div>
 </html>

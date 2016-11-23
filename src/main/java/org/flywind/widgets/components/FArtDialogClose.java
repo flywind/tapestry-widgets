@@ -12,6 +12,12 @@ import org.flywind.widgets.base.AbstractExtendableComponent;
 
 public class FArtDialogClose extends AbstractExtendableComponent{
 
+	/**
+	 * 关闭的弹出层ID
+	 * 
+	 * en *
+	 * Closed dialog's id
+	 */
 	@Parameter(required=true, defaultPrefix=BindingConstants.LITERAL)
 	private String close;
 
@@ -23,6 +29,9 @@ public class FArtDialogClose extends AbstractExtendableComponent{
 	
 	/**
 	 * 按钮样式
+	 * 
+	 * en *
+	 * Dialog button css class name
 	 */
 	@Parameter(value="btn",defaultPrefix=BindingConstants.LITERAL)
 	private String cls;

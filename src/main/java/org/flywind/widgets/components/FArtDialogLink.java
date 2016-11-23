@@ -17,6 +17,9 @@ public class FArtDialogLink extends AbstractExtendableComponent
 	{
 	    /**
 	     * 被打开的弹出层.
+	     * 
+	     * en *
+	     * Opened dialog's id
 	     */
 		@Property
 	    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
@@ -24,6 +27,9 @@ public class FArtDialogLink extends AbstractExtendableComponent
 		
 		/**
 		 * 组件参数
+		 * 
+		 * en *
+		 * Dialog link params
 		 */
 		@Parameter
 		private JSONObject params;
@@ -33,6 +39,9 @@ public class FArtDialogLink extends AbstractExtendableComponent
 		
 		/**
 		 * 按钮样式
+		 * 
+		 * en *
+		 * Dialog link css class name
 		 */
 		@Parameter(value="btn",defaultPrefix=BindingConstants.LITERAL)
 		private String cls;

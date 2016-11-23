@@ -22,6 +22,9 @@ public class FArtDialog implements ClientElement {
 
 	/**
 	 * 弹出层id
+	 * 
+	 * en *
+	 * Dialog client id
 	 */
 	@Parameter(value="prop:componentResources.id",defaultPrefix=BindingConstants.LITERAL)
 	private String clientId;
