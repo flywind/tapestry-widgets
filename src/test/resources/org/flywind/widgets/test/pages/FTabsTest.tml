@@ -1,15 +1,16 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
+<h3>${message:compoment-desc}</h3>
 <table class="tapestry-tab" border="0">
   <thead>
     <tr>
-      <th>名称</th>
-      <th>类型</th>
-      <th>标志</th>
-      <th>默认</th>
-      <th>默认前缀</th>
-      <th>此版本开始</th>
-      <th>描述</th>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +21,7 @@
       <td>false</td>
       <td></td>
       <td>1.0</td>
-      <td>hover:是否鼠标经过触发切换,hover:true时鼠标经过触发切换</td>
+      <td>${message:desc1}</td>
     </tr>
     <tr>
       <td>tabStyle</td>
@@ -29,7 +30,7 @@
       <td></td>
       <td>literal</td>
       <td>1.0</td>
-      <td>tabStyle:标签页样式,有几种类型:plain,narrow,pill,justified</td>
+      <td>${message:desc2}</td>
     </tr>
     <tr>
       <td>tabPosition</td>
@@ -38,21 +39,20 @@
       <td></td>
       <td>literal</td>
       <td>1.0</td>
-      <td>tabPosition:标签页位置,默认为top.类型有:top,bottom,left,right</td>
+      <td>${message:desc3}</td>
     </tr>
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 	<div style="padding:30px;width:900px;height:200px;">
-	<p>tabStyle定义标签样式,有几种类型:plain,narrow,pill,justified</p>
-	<p>tabPosition:top,bottom,left,right</p>
 	<div t:type="widgets/ftabs" style="height:auto" t:tabStyle="justified" t:tabPosition="bottom">
-		<div title="中文" style="padding:10px">About me</div>
-		<div title="英文" style="padding:10px">Contact me工作需要</div>
+		<div title="Chinese" style="padding:10px">About me</div>
+		<div title="English" style="padding:10px">Contact me</div>
 	</div>
 	</div>
 	<div t:type="widgets/ftabs" style="height:100px;" t:hover="true">
-		<div title="中文" style="padding:10px">About me</div>
-		<div title="英文" style="padding:10px">Contact me工作需要</div>
+		<div title="Chinese" style="padding:10px">About me</div>
+		<div title="English" style="padding:10px">Contact me</div>
 	</div>
 	<div t:type="widgets/ftabs" style="height:200px;" t:hover="true">
 		<div title="Sub Tabs" style="padding:10px;">

@@ -20,24 +20,35 @@ public class FTabs extends AbstractExtendableComponent{
 	
 	/**
 	 * 组件参数
+	 * 
+	 * en *
+	 * FTab params
 	 */
 	@Parameter
     private JSONObject params;
 	
 	/**
 	 * 鼠标经过触发切换
+	 * 
+	 * en *
+	 * Switch tabs method,Default:false
 	 */
 	@Parameter
 	private boolean hover = false;
 	
 	/**
 	 * 标签页样式
+	 * 
+	 * en *
+	 * Tab style,has 'plain','narrow','pill','justified'
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String tabStyle;
 	
 	/**
 	 * 标签页位置,默认为top
+	 * 
+	 * Tab position,has 'top','bottom','left','right'.Default:top
 	 */
 	@Parameter(value="top",defaultPrefix=BindingConstants.LITERAL)
 	private String tabPosition;
