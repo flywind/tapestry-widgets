@@ -12,35 +12,50 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
-@Import(stylesheet={"${widget.plugins.assets.path}/easyui/themes/bootstrap/easyui.css","${widget.plugins.assets.path}/easyui/themes/icon.css"})
+@Import(stylesheet={"${widget.plugins.assets.path}/easyui/themes/bootstrap/easyui.css","${widget.plugins.assets.path}/artdialog/skin/default.css"})
 public class FDatagridBtn implements ClientElement {
 
 	/**
 	 * 客户端id
+	 * 
+	 * en *
+	 * Client id
 	 */
 	@Parameter(value="prop:componentResources.id",defaultPrefix=BindingConstants.LITERAL)
 	private String clientId;
 	
 	/**
 	 * 组件的文本
+	 * 
+	 * en *
+	 * Datagrid button label
 	 */
 	@Parameter(required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String text;
 	
 	/**
-	 * 组件类型:link(pagelink),event(eventlink)
+	 * 组件类型:page(pagelink),event(eventlink)
+	 * 
+	 * en *
+	 * Datagrid button type,has page(pagelink) or event(eventlink).Default:event
 	 */
 	@Parameter(value="event",defaultPrefix=BindingConstants.LITERAL)
 	private String linkType;
 	
 	/**
 	 * 按钮样式
+	 * 
+	 * en *
+	 * Datagrid button css class name.Default:btn
 	 */
 	@Parameter(value="btn",defaultPrefix=BindingConstants.LITERAL)
 	private String cls;
 	
 	/**
 	 * 按钮图标
+	 * 
+	 * en *
+	 * Datagrid button icon css class name.Default:fa
 	 */
 	@Parameter(value="fa",defaultPrefix=BindingConstants.LITERAL)
 	private String itemcls;
@@ -53,75 +68,102 @@ public class FDatagridBtn implements ClientElement {
 	
 	/**
 	 * 客户端事件类型
+	 * 
+	 * en *
+	 * Datagrid button client event.Default:click(js onClick event)
 	 */
 	@Parameter(value="click",defaultPrefix=BindingConstants.LITERAL)
 	private String clientEvent;
 	
 	/**
 	 * datagrid id
+	 * 
+	 * en *
+	 * Edited datagrid's id
 	 */
 	@Parameter(required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String gridId;
 	
 	/**
 	 * ajax url
+	 * 
+	 * en *
+	 * Handling requests for URL
 	 */
 	@Parameter(required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String url;
 	
 	/**
 	 * 没有选择数据时,警告框的内容
+	 * 
+	 * en *
+	 * Datagrid has not data, the contents of the warning box
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String alertMsg;
 	
 	/**
 	 * 编辑模式下出现多条记录时,警告框的内容
+	 * 
+	 * en *
+	 * When a number of records appear in edit mode, the contents of the warning box
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String editMsg;
 	
 	/**
 	 * 没有选择数据时,警告框的标题
+	 * 
+	 * en *
+	 * Datagrid has not data, the contents of the warning title
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String alertTitle;
 	
 	/**
 	 * 确认框的标题
+	 * 
+	 * en *
+	 * Confirm title msg
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String confirmTitle;
 	
 	/**
 	 * 确认框的内容
+	 * 
+	 * en *
+	 * Confirm content msg
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String confirmMsg;
 	
 	/**
 	 * 确认框按钮的文字
+	 * 
+	 * en *
+	 * Confirm submit btn msg
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String submitMsg;
 	
 	/**
 	 * 确认框取消按钮的文字
+	 * 
+	 * en *
+	 * Confirm cancel btn msg
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String cancelMsg;
 	
 	/**
 	 * 关闭弹窗口
+	 * 
+	 * en *
+	 * Closed datagrid's id
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String closed;
-	
-	/**
-	 * 编辑模式:CREATE, REVIEW, UPDATE;
-	 */
-	@Parameter(defaultPrefix=BindingConstants.LITERAL)
-	private String editorMode;
 	
 	@Inject
 	private Messages messages;
@@ -159,9 +201,6 @@ public class FDatagridBtn implements ClientElement {
 			opts.put("alertMsg", messages.get("alertMsg"));
 		}else{
 			opts.put("alertMsg", alertMsg);
-		}
-		if(StringUtils.isNotEmpty(editorMode)){
-			opts.put("editorMode", editorMode);
 		}
 		
 		javaScriptSupport.require("inits/init-fDatagridBtn").with(opts);

@@ -13,7 +13,6 @@ import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
-import org.apache.tapestry5.json.JSONArray;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.javascript.InitializationPriority;
@@ -39,63 +38,84 @@ public class FDatagrid implements ClientElement{
 	
 	/**
 	 * 默认一页显示条数
+	 * 
+	 * en *
+	 * Page size
 	 */
 	public static final int PAGE_SIZE = 10;
 	
 	/**
 	 * 客户端id,组件识别的id
+	 * 
+	 * en *
+	 * Client id
 	 */
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String clientId;
 	
 	/**
 	 * 组件参数
+	 * 
+	 * en *
+	 * Datagrid params
 	 */
 	@Parameter
 	private JSONObject params;
     
     /**
      * 当设置了 pagination 属性时，初始化页面尺寸。默认10
+     * 
+     * en *
+	 * Page size
      */
     @Parameter
     private int pageSize = PAGE_SIZE; 
     
     /**
      * 单选模式
+     * 
+     * en *
+     * Datagrid singleSelect mode.Default:true
      */
     @Parameter
     private boolean singleSelect = true;
     
     /**
      * 语言默认是否中文
+     * 
+     * en *
+     * Datagrid messages language,has en or zh-cn.Default:zh-CN
      */
     @Parameter
     private String language = "zh-CN";
     
     /**
      * 是否自适应布局
+     * 
+     * en *
+     * If true,will adapt page layout.Default:false 
      */
     @Parameter
     private boolean fixLayout = false;
     
     /**
      * 空记录提示
+     * 
+     * en *
+     * Datagrid has not data, show empty msg.
      */
     @Parameter(defaultPrefix=BindingConstants.LITERAL)
     private String emptyMsg;
     
     /**
      * 数据源
+     * 
+     * en *
+     * Datagrid data source
      */
     @SuppressWarnings("rawtypes")
 	@Parameter(required = true, autoconnect = true)
     private List source;
-    
-    @Parameter(defaultPrefix = BindingConstants.LITERAL)
-    private int total;
-    
-    @Parameter
-    private JSONArray gcolumns;
 	
 	@Inject
 	private JavaScriptSupport javaScriptSupport;
@@ -116,9 +136,6 @@ public class FDatagrid implements ClientElement{
     	writer.element("table", "class","easyui-datagrid","id", getClientId());
     }
 
-	/**
-	 *重写客户端id
-	 */
 	@Override
     public String getClientId() {
         if(InternalUtils.isBlank(clientId)) {
@@ -156,7 +173,6 @@ public class FDatagrid implements ClientElement{
         defaults.put("emptyMsg", emptyMsg == null ? messages.get("emptyMsg") : emptyMsg);
         defaults.put("striped", true);
         defaults.put("nowrap", true);
-        defaults.put("gcolumns", gcolumns);
         defaults.put("toggleColumns", true);
         defaults.put("singleSelect", singleSelect);
         defaults.put("language", language);
@@ -171,10 +187,6 @@ public class FDatagrid implements ClientElement{
 		
 	}
     
-    /**
-	 * 加载数据
-	 * @return JSONObject
-	 */
 	@OnEvent(WidgetSymbolConstants.EASYUI_DATAGRID_DATA)
 	public JSONObject onData() throws Exception {
 		String pageStr = request.getParameter("page");

@@ -88,12 +88,6 @@ public class FDatagridTest extends AppBase {
 		examples = exampleService.getAllExamples(customerCode,(FPage)request.getAttribute("page"));
 	}
 	
-	@OnEvent(component="newContracts3", value=WidgetSymbolConstants.EASYUI_DATAGRID_LOAD_DATA)
-	public void filterExamplesData3(){
-		String customerCode = "0755";
-		examples = exampleService.getAllExamples(customerCode,(FPage)request.getAttribute("page"));
-	}
-	
 	//@OnEvent(value="del")
 	public void onDel(int id){
 		System.out.println(id);
