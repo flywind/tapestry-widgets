@@ -38,91 +38,125 @@ public class FSubgrid implements ClientElement{
 	
 	/**
 	 * 默认一页显示条数
+	 * 
+	 *  en *
+	 * Page size
 	 */
 	public static final int PAGE_SIZE = 10;
 	
 	/**
 	 * 客户端id,组件识别的id
+	 * 
+	 *  en *
+	 * Client id
 	 */
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String clientId;
 	
 	/**
 	 * 当前页记录数
+	 * 
+	 *  en *
+	 * Page size
 	 */
 	@Parameter
     private int pageSize = PAGE_SIZE; 
     
     /**
      * 单选模式
+     * 
+     *  en *
+     * Datagrid singleSelect mode.Default:true
      */
     @Parameter
     private boolean singleSelect = true;
     
     /**
      * 数据源
+     * 
+     *  en *
+     * Datagrid data source
      */
     @SuppressWarnings("rawtypes")
 	@Parameter(required = true, autoconnect = true)
     private List source;
     
-    
-    /**
-     * 数据源记录总数
-     */
-    @Parameter(defaultPrefix = BindingConstants.LITERAL)
-    private int total;
-    
     /**
      * 子级数据请求的url
+     * 
+     * en *
+     * Subgrid URL request
      */
     @Parameter(defaultPrefix=BindingConstants.LITERAL)
     private String subUrl;
     
     /**
      * loading提示
+     * 
+     * en *
+     * Loading label
      */
     @Parameter(defaultPrefix=BindingConstants.LITERAL)
     private String loadMsg;
     
     /**
      * 子级的loading提示
+     * 
+     * Subgrid loading label
      */
     @Parameter(defaultPrefix=BindingConstants.LITERAL)
     private String subLoadMsg;
     
     /**
      * 空记录提示
+     * 
+     *  en *
+     * Datagrid has not data, show empty msg.
      */
     @Parameter(defaultPrefix=BindingConstants.LITERAL)
     private String emptyMsg;
     
     /**
      * 子级的空记录提示
+     * 
+     * en *
+     * Subgrid has not data, show empty msg.
      */
     @Parameter(defaultPrefix=BindingConstants.LITERAL)
     private String subEmptyMsg;
 	
 	/**
 	 * 组件参数
+	 * 
+	 *  en *
+	 * Datagrid params
 	 */
 	@Parameter
 	private JSONObject params;
 	
 	/**
 	 * 子级栏位
+	 * 
+	 * en *
+	 * Subgrid columns
 	 */
 	@Parameter
 	private JSONArray subColumns; 
 	
 	/**
      * 语言默认是否中文
+     * 
+     *  en *
+     * Datagrid messages language,has en or zh-cn.Default:zh-CN
      */
     @Parameter
     private String language = "zh-CN";
 	
 	/**
      * 是否自适应布局
+     * 
+     *  en *
+     * If true,will adapt page layout.Default:false 
      */
     @Parameter
     private boolean fixLayout = false;

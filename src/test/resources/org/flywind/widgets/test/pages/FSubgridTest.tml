@@ -1,8 +1,61 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
+<h3>${message:compoment-desc}</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc1}</td>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td>{'method':'POST','width':'auto','fit':true,'fitColumns':false,'pagination':true,'rownumbers':true,'loadMsg':messages.get("loading-data"),'remoteSort':false,'pageSize':10,'striped':true,'nowrap':true,'singleSelect':true,'language':'zh-cn','fixLayout':false}</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc2}</td>
+    </tr>
+    <tr>
+      <td>singleSelect</td>
+      <td>boolean</td>
+      <td></td>
+      <td>true</td>
+      <td></td>
+      <td>1.0</td>
+      <td>${message:desc3}</td>
+    </tr>
+    <tr>
+      <td>source</td>
+      <td>list</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>${message:desc4}</td>
+    </tr>
+  </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
+</table>
  <div id="selectCondition">
  <div class="btn-group mr10">
-	  <t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="删除" url="${delUrl}" alertMsg="没有选择" gridId="newContracts2" />
+	  <t:widgets.fdatagridbtn t:clientId="delete" zone="zoneOne"  text="Delete" url="${delUrl}" alertMsg="No data selected" gridId="newContracts2" />
 </div>
  </div><!-- selectCondition end -->
  <t:zone t:id="zoneOne" id="zoneOne">
@@ -10,8 +63,8 @@
 <table t:type="widgets/fsubgrid" t:id="newContracts2" t:source="examples" t:subUrl="${url}" t:subColumns="${opts}" t:fixLayout="true">
 	<thead>
 		<tr>
-			<th data-options="field:'userName',width:150,title:'用户名'"></th>
-			<th data-options="field:'creater',width:300,title:'创建者'"></th>
+			<th data-options="field:'userName',width:150,title:'User name'"></th>
+			<th data-options="field:'creater',width:300,title:'Creater'"></th>
 		</tr>
 	</thead>
 </table>

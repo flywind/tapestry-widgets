@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.ClientElement;
 import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.Events;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectContainer;
@@ -37,42 +38,95 @@ public class Editor {
 	public final static String TOOLS_SIMPLE = "simple";// 简单
 	public final static String TOOLS_MINI = "mini";// 迷你
 	
-	@Parameter(value = TOOLS_FULL, allowNull = true, defaultPrefix = BindingConstants.LITERAL)
+	/**
+	 * 富文本编辑器工具类型
+	 * 
+	 * en *
+	 * xhEditor tools type, has 'full','mfull','simple','mini'.Default:full
+	 */
+	@Parameter(value = TOOLS_FULL, defaultPrefix = BindingConstants.LITERAL)
 	private String tools;
 	
+	/**
+	 * 编辑器参数配置
+	 * 
+	 * en *
+	 * xhEditor params
+	 */
 	@Parameter
 	private JSONObject params;
 	
-	@Parameter(value = "true", defaultPrefix = BindingConstants.LITERAL)
-	private boolean immediate;
-	
-	@Parameter(value = "true", defaultPrefix = BindingConstants.LITERAL)
-	private boolean uploadImg;
-	
+	/**
+	 * 图片上传请求连接
+	 * 
+	 * en *
+	 * Upload image ajax request url
+	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String upImgUrl;
-
 	
+	/**
+	 * 容许上传的图片格式
+	 * 
+	 * en *
+	 * Allowed upload image file format
+	 */
 	@Parameter(value="jpg,jpeg,gif,png",defaultPrefix=BindingConstants.LITERAL)
 	private String upImgExt;
 	
+	/**
+	 * flash上传请求连接
+	 * 
+	 * en *
+	 * Upload image flash request url
+	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String upFlashUrl;
 	
+	/**
+	 * 容许上传的flash格式
+	 * 
+	 * en *
+	 * Allowed upload flash file format
+	 */
 	@Parameter(value="swf",defaultPrefix=BindingConstants.LITERAL)
 	private String upFlashExt;
 	
+	/**
+	 * 视频上传请求连接
+	 * 
+	 * en *
+	 * Upload image media request url
+	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String upMediaUrl;
 	
+	/**
+	 * 容许上传的视频格式
+	 * 
+	 * en *
+	 * Allowed upload media file format
+	 */
 	@Parameter(value="wmv,avi,wma,mp3,mid,mp4",defaultPrefix=BindingConstants.LITERAL)
 	private String upMediaExt;
 	
+	/**
+     * 语言默认是否中文
+     * 
+     * en *
+     * Datagrid messages language,has en or zh-cn.Default:zh-CN
+     */
+	@Parameter(value="zh-CN",defaultPrefix=BindingConstants.LITERAL)
+    private String language;
+	
+	/**
+	 * 编辑器的初始化高度
+	 * 
+	 * en *
+	 * xhEditor height.Default:300
+	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private int height = 300;
-	
-	@Parameter
-    private Object[] context;
 	
 	@Inject
 	private JavaScriptSupport javaScriptSupport;
@@ -100,9 +154,15 @@ public class Editor {
 
     @Inject
     private Messages messages;
+    
+    public void beginRender(MarkupWriter writer){
+    	
+    }
 	
-	public void afterRender(){
-		
+	public void afterRender(MarkupWriter writer){
+		writer.element("input", "id","xhEditorLangId","type","hidden", "value",language.toLowerCase());
+    	writer.end();
+		resources.renderInformalParameters(writer);
 		JSONObject data = new JSONObject();
 		data.put("id", clientElement.getClientId());
 		
@@ -115,6 +175,14 @@ public class Editor {
 		if(StringUtils.isNotBlank(upImgUrl)){
 			defaults.put("upImgUrl", upImgUrl);
 			defaults.put("upImgExt", upImgExt);
+		}
+		if(StringUtils.isNotBlank(upFlashUrl)){
+			defaults.put("upFlashUrl", upFlashUrl);
+			defaults.put("upFlashExt", upFlashExt);
+		}
+		if(StringUtils.isNotBlank(upMediaUrl)){
+			defaults.put("upMediaUrl", upMediaUrl);
+			defaults.put("upMediaExt", upMediaExt);
 		}
 		defaults.put("height", height);
 		defaults.put("tools", tools);

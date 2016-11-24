@@ -1,12 +1,98 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
-	<!-- <style>
-	iframe html,iframe body{height:100%;background:#666;}
-	</style> -->
+<h3>${message:compoment-desc}</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tools</td>
+      <td>String</td>
+      <td></td>
+      <td>full</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc1}</td>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>${message:desc2}</td>
+    </tr>
+    <tr>
+      <td>upImgUrl</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc3}</td>
+    </tr>
+    <tr>
+      <td>upImgExt</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc4}</td>
+    </tr>
+    <tr>
+      <td>upFlashUrl</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc5}</td>
+    </tr>
+    <tr>
+      <td>upFlashExt</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc6}</td>
+    </tr>
+    <tr>
+      <td>upMediaUrl</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc7}</td>
+    </tr>
+    <tr>
+      <td>upImgExt</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc8}</td>
+    </tr>
+  </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
+</table>	
 	<t:form  >
-		<t:textarea t:id="content" t:mixins="widgets/editor" style="height:200px;" editor.upImgUrl="UploadHander"/>
-		<t:submit value="Submit" />
+		<t:textarea t:id="content" style="height:300px" t:mixins="widgets/editor" editor.language="en" editor.upImgUrl="UploadHander"/>
+		<t:textarea t:id="content2" style="height:300px" t:mixins="widgets/editor" editor.language="en" editor.tools="simple" editor.upImgUrl="UploadHander"/>
+		<t:textarea t:id="content3" style="height:300px" t:mixins="widgets/editor" editor.language="en" editor.tools="mini"/>
 	</t:form>
-
 
 </html>
