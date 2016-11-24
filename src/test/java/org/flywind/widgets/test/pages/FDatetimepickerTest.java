@@ -7,7 +7,7 @@ import org.apache.tapestry5.json.JSONObject;
 public class FDatetimepickerTest {
 
 	@Property
-	private String name,name2;
+	private String name,name2,name3;
 	
 	public JSONObject getOptions(){
 		JSONObject opts = new JSONObject();

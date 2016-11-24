@@ -7,4 +7,7 @@ public class FNumberSpinnerTest {
 
 	@Property
 	private int num = 10;
+	
+	@Property
+	private int  mum2 = 20;
 }

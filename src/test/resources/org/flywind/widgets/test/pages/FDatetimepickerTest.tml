@@ -1,16 +1,16 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
-<h3>FDatetimepicker组件,<a href="http://xdsoft.net/jqplugins/datetimepicker/" target="_blank">官方文档</a>,参数如下:</h3>
+<h3>${message:compoment-desc}</h3>
 <table class="tapestry-tab" border="0">
   <thead>
     <tr>
-      <th>名称</th>
-      <th>类型</th>
-      <th>标志</th>
-      <th>默认</th>
-      <th>默认前缀</th>
-      <th>此版本开始</th>
-      <th>描述</th>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
     </tr>
   </thead>
   <tbody>
@@ -21,13 +21,14 @@
       <td>{'lang':'ch','format':'Y-m-d','timepicker':false,'datepicker':true,'yearStart':'2000','yearEnd':'2050','todayButton':true}</td>
       <td></td>
       <td>1.0</td>
-      <td>日历组件的组件的默认参数,lang:ch(语言选择),format:Y-m-d(格式化日期Y-m-d H:i),timepicker:false(是否开启时间选项),datepicker:true(是否开启日期选型),
-      yearStart:2000(设置最小年份),yearEnd:2050(设置最大年份),todayButton:true(是否开启选择今天按钮).参数可以随意覆盖与添加,更详细参数请参考<a href="http://xdsoft.net/jqplugins/datetimepicker/" target="_blank">官方文档</a></td>
+      <td>${message:desc1}</td>
     </tr>
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 <t:form autofocus="false">
-<t:textfield style="margin-top:15px;" class="input-time" t:id="name" t:mixins="widgets/FDatetimepicker"/>
-<t:textfield style="margin-top:15px;" t:id="name2" t:mixins="widgets/FDatetimepicker" FDatetimepicker.params="${options}"/>
+<t:textfield style="margin-top:15px;width:150px" class="input-time" t:id="name3" t:mixins="widgets/FDatetimepicker" FDatetimepicker.params="{'lang':'en'}"/>
+<t:textfield style="margin-top:15px;width:150px" class="input-time" t:id="name" t:mixins="widgets/FDatetimepicker"/>
+<t:textfield style="margin-top:15px;width:150px" t:id="name2" t:mixins="widgets/FDatetimepicker" FDatetimepicker.params="${options}"/>
 </t:form>
 </html>

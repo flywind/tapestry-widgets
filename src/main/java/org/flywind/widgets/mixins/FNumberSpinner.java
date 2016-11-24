@@ -15,12 +15,18 @@ public class FNumberSpinner {
 	
 	/**
 	 * 是否可编辑,默认:false
+	 * 
+	 * en *
+	 * If true you can edit, default: false
 	 */
-	@Parameter(defaultPrefix = BindingConstants.LITERAL)
-	private boolean editable = true;
+	@Parameter(value="true",defaultPrefix = BindingConstants.LITERAL)
+	private boolean editable;
 	
 	/**
-	 * 配置参数可以json
+	 * 配置参数
+	 * 
+	 * en *
+	 * FNumberSpinner params
 	 */
 	@Parameter
 	private JSONObject params;

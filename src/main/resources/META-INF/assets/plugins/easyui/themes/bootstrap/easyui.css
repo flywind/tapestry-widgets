@@ -1949,6 +1949,7 @@
   margin: 0;
   padding: 6px 12px;
   vertical-align: baseline;
+  outline: none;
 }
 .spinner-arrow {
   background-color: #F2F2F2;

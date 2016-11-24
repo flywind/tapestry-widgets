@@ -1,16 +1,16 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
-<h3>FNumberbox组件</h3>
+<h3>${message:compoment-desc}</h3>
 <table class="tapestry-tab" border="0">
   <thead>
     <tr>
-      <th>名称</th>
-      <th>类型</th>
-      <th>标志</th>
-      <th>默认</th>
-      <th>默认前缀</th>
-      <th>此版本开始</th>
-      <th>描述</th>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +21,7 @@
       <td></td>
       <td>literal</td>
       <td>1.0</td>
-      <td>editable:是否可编辑,默认:false</td>
+      <td>${message:desc1}</td>
     </tr>
     <tr>
       <td>params</td>
@@ -30,15 +30,17 @@
       <td></td>
       <td>literal</td>
       <td>1.0</td>
-      <td>params:配置参数,<a href="http://jeasyui.com/documentation/index.php" target="_blank">详细参考官方文档</a></td>
+      <td>${message:desc2}</td>
     </tr>
   </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
 </table>
 <t:form>
-<div style="width:150px;height:100px;background-color:#f6f6f6;">
-	<!-- <t:widgets.FNumberSpinner t:id="num"/> -->
+<div style="width:150px;height:100px;">
 <t:textfield t:id="num" class="easyui-numberspinner" t:mixins="widgets/FNumberSpinner" t:validate="required"/>
-<t:submit/>
+</div>
+<div style="width:150px;height:100px;">
+<t:textfield t:id="mum2" class="easyui-numberspinner" t:mixins="widgets/FNumberSpinner" FNumberSpinner.params="{'editable':false}" t:validate="required"/>
 </div>
 </t:form>
 </html>
