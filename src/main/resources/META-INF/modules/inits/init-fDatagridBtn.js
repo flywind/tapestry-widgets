@@ -26,7 +26,7 @@
 						id:	obj+'noSelected',
 						content: alertMsg,
 						lock: true,
-						padding: '20px',
+						padding: '20px 150px',
 						title:title,
 						time: 3
 					};
@@ -39,7 +39,7 @@
 					    id: obj+'confirm',
 					    title: confirmTitle,
 					    content: confirmMsg,
-					    padding: '20px',
+					    padding: '20px 150px',
 					    lock: true,
 					    button: [
 					        {
