@@ -36,7 +36,7 @@ Exclusive jQuery Mixins :
 
 ## How to use it
 
-Use maven install tapestry-widgets-1.0.jar, click here to download [http://www.flywind.org/uploadImages/other/tapestryWidgets.zip](http://www.flywind.org/uploadImages/other/tapestryWidgets.zip)
+Use maven install tapestry-widgets-1.0.jar, click here to download [https://github.com/flywind/tapestry-widgets/tree/master/componentJars](https://github.com/flywind/tapestry-widgets/tree/master/componentJars)
 
 	mvn install:install-file -DgroupId=org.flywind.tapestry -DartifactId=tapestry-widgets -Dpackaging=jar -Dversion=1.0 -DgeneratePon=true -Dfile=d:/tapestry-widgets-1.0.jar
 
