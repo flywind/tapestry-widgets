@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.flywind</groupId>
     <artifactId>tapestry-widgets</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>tapestry-widgets Tapestry 5 Application</name>
         <dependencies>
