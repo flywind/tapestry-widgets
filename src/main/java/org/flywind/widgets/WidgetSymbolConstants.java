@@ -92,9 +92,19 @@ public class WidgetSymbolConstants {
      */
     public static final String EDIROR_VALUE_CHANGE = "editorValueChange";
     
+    /**
+     * 富文本文件上传
+     */
     public static final String EDITOR_UPLOAD_IMG = "editorUploadImg";
     
-    public static final String WIDGET_KISSY_PATH = "kissy.path";
     
+    /**
+     * Free icons
+     */
+    public static final String IS_USE_FREE_ICONS = "is.use.free.icons";
     
+    /**
+     * Easyui css
+     */
+    public static final String IS_USE_EASYUI_CSS = "is.use.easyui.css";
 }

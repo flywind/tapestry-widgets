@@ -10,12 +10,17 @@ import org.apache.tapestry5.ioc.ScopeConstants;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.FactoryDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
+import org.apache.tapestry5.services.Core;
 import org.apache.tapestry5.services.HttpServletRequestFilter;
 import org.apache.tapestry5.services.LibraryMapping;
 import org.apache.tapestry5.services.javascript.JavaScriptModuleConfiguration;
+import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.ModuleManager;
+import org.apache.tapestry5.services.javascript.StackExtension;
+import org.apache.tapestry5.services.javascript.StackExtensionType;
 import org.flywind.widgets.WidgetSymbolConstants;
 
 /**
@@ -51,10 +56,12 @@ public class WidgetModule
         configuration.add(WidgetSymbolConstants.WIDGET_PLUGINS_PATH, "classpath:/META-INF/modules/plugins");
         configuration.add(WidgetSymbolConstants.WIDGET_PLUGINS_ASSETS_PATH, "classpath:/META-INF/assets/plugins");
         configuration.add(WidgetSymbolConstants.WIDGET_MODULES_PATH, "classpath:/META-INF/modules");
-        configuration.add(WidgetSymbolConstants.WIDGET_KISSY_PATH, "classpath:org/flywind/widgets/build");
+   
+        //If true,use free icons,like font-awesome etc.Default true
+        configuration.add(WidgetSymbolConstants.IS_USE_FREE_ICONS, true);
         
-      
-
+        //If true,use easyui plugin style.Default false
+        configuration.add(WidgetSymbolConstants.IS_USE_EASYUI_CSS, false);
     }
     
     public static void contributeApplicationDefaults(
@@ -75,6 +82,50 @@ public class WidgetModule
 	{
 		configuration.add(new LibraryMapping("widgets", "org.flywind.widgets"));
 	}
+    
+    @Contribute(JavaScriptStack.class)
+    @Core
+    public static void setupInternalJavaScriptStack(OrderedConfiguration<StackExtension> configuration, 
+    		@Symbol(WidgetSymbolConstants.IS_USE_FREE_ICONS) boolean icons,
+    		@Symbol(WidgetSymbolConstants.IS_USE_EASYUI_CSS) boolean easyui)
+    {
+    	String fontAwesomePath = "${" + WidgetSymbolConstants.WIDGET_PLUGINS_ASSETS_PATH + "}/font-awesome/css/font-awesome.min.css";
+    	String themifyIconsPath = "${" + WidgetSymbolConstants.WIDGET_PLUGINS_ASSETS_PATH + "}/themify-icons/themify-icons.min.css";
+    	String ionIconsPath = "${" + WidgetSymbolConstants.WIDGET_PLUGINS_ASSETS_PATH + "}/ion-icons/css/ionicons.min.css";
+    	if(icons){
+    		addIconsStylesheets(configuration,fontAwesomePath,themifyIconsPath,ionIconsPath);
+    	}
+        
+    	String easyuiPath = "${" + WidgetSymbolConstants.WIDGET_PLUGINS_ASSETS_PATH + "}/easyui/themes/bootstrap/easyui.css";
+    	if(easyui){
+    		addEasyuiStylesheets(configuration,easyuiPath);
+    	}
+    }
+    
+    private static void addIconsStylesheets(OrderedConfiguration<StackExtension> configuration, 
+    		String fontAwesome, String themifyIcons, String ionIcons)
+    {
+        add(configuration, StackExtensionType.STYLESHEET,fontAwesome);
+        add(configuration, StackExtensionType.STYLESHEET,themifyIcons);
+        add(configuration, StackExtensionType.STYLESHEET,ionIcons);
+    }
+    
+    private static void addEasyuiStylesheets(OrderedConfiguration<StackExtension> configuration, String easyui)
+    {
+        add(configuration, StackExtensionType.STYLESHEET,easyui);
+    }
+    
+    private static void add(OrderedConfiguration<StackExtension> configuration, StackExtensionType type, String... paths)
+    {
+        for (String path : paths)
+        {
+            int slashx = path.lastIndexOf('/');
+            String id = path.substring(slashx + 1);
+
+            configuration.add(id, new StackExtension(type, path));
+        }
+    }
+    
     
     /**
      * 贡献组件静态资源目录，组件开发时未贡献的目录在项目中无法调用
