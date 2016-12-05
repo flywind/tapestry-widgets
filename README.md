@@ -38,7 +38,7 @@ Exclusive jQuery Mixins :
 
 Use maven install tapestry-widgets-1.0.jar, click here to download [https://github.com/flywind/tapestry-widgets/tree/master/componentJars](https://github.com/flywind/tapestry-widgets/tree/master/componentJars)
 
-	mvn install:install-file -DgroupId=org.flywind.tapestry -DartifactId=tapestry-widgets -Dpackaging=jar -Dversion=1.0 -DgeneratePon=true -Dfile=d:/tapestry-widgets-1.0.jar
+	mvn install:install-file -DgroupId=org.flywind -DartifactId=tapestry-widgets -Dpackaging=jar -Dversion=1.0 -DgeneratePon=true -Dfile=d:/tapestry-widgets-1.0.jar
 
 Just  add the following dependency in your `pom.xml`.
 	
