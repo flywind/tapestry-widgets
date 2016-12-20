@@ -154,10 +154,6 @@ public class Editor {
 
     @Inject
     private Messages messages;
-    
-    public void beginRender(MarkupWriter writer){
-    	
-    }
 	
 	public void afterRender(MarkupWriter writer){
 		writer.element("input", "id","xhEditorLangId","type","hidden", "value",language.toLowerCase());

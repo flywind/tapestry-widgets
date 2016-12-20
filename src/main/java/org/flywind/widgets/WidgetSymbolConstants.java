@@ -107,4 +107,14 @@ public class WidgetSymbolConstants {
      * Easyui css
      */
     public static final String IS_USE_EASYUI_CSS = "is.use.easyui.css";
+    
+    /**
+	 * bootstrap data table
+	 */
+	public static final String BOOTSTRAP_TABLE_DATA = "bootstrapTableData";
+	
+	/**
+	 * bootstrap data table
+	 */
+	public static final String BOOTSTRAP_TABLE_LOAD_DATA = "bootstrapTableLoadData";
 }

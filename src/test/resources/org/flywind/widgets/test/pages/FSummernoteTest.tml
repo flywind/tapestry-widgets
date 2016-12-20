@@ -1,0 +1,9 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
+      <t:form>
+      ${edit}
+     <t:TextArea t:id="edit" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.url="${uploadurl}" FSummernote.language="en"/>
+     <t:TextArea t:id="edit2" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.url="${uploadurl}" FSummernote.language="en"/>
+     <t:submit value="submit"/>
+     </t:form>
+</html>

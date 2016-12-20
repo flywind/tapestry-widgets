@@ -1,0 +1,14 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
+      <t:widgets.FBootstrapTableBtn t:id="delete" zone="zoneOne"  text="Delete data" url="${delUrl}" alertMsg="No data selected" gridId="t1" />
+      <t:widgets.FBootstrapTableBtn t:id="edit" linkType="page" text="Edit data" url="FDatagridModeTest" gridId="t1"/>
+      <t:zone t:id="zoneOne" id="zoneOne">
+<t:widgets.FBootstrapTable t:id="t1" t:source="examples" t:columns="[{'field':'state','checkbox':'true'},
+{'field':'id','title':'Hello id'},
+{'field':'companyName','title':'companyName'},
+{'field':'createTime','title':'createTime'},
+{'field':'creater','title':'creater'},
+{'field':'customerCode','title':'customerCode'},
+{'field':'lastUpdateTime','title':'lastUpdateTime'}]"  t:params="{'pagination':'true','height':500,'showRefresh':'true','showToggle':'true','showColumns':'true'}"/>
+</t:zone>	
+</html>
