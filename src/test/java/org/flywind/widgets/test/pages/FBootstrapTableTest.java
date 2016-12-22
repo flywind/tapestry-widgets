@@ -52,7 +52,6 @@ public class FBootstrapTableTest extends AppBase  {
 	
 	@OnEvent(component="t1", value=WidgetSymbolConstants.BOOTSTRAP_TABLE_LOAD_DATA)
 	public void filterExamplesData(){
-		//sleep(3000);
 		if(paramsMap == null){
 			paramsMap = new HashMap<String,Object>();
 			paramsMap.put("customerCode", "0755");

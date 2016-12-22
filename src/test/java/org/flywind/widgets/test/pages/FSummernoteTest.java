@@ -12,4 +12,8 @@ public class FSummernoteTest {
 	@Persist(PersistenceConstants.FLASH)
 	private String edit,edit2;
 	
+	public void setupRender(){
+		edit = "<div>Hello world</div>";
+	}
+	
 }
