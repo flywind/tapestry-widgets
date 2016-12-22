@@ -3,6 +3,11 @@
 ## Demo and documentation
 http://www.flywind.org/en/tapestryzzl
 
+## Tapestry widgets component cool style,you can see tapestry cms
+CMS: http://cms.flywind.org/en/login
+User name: admin
+Password: 123456
+
 Tapestry5 programming technology exchange:QQ group 41138107
 
 Exclusive jQuery components : 
