@@ -17,7 +17,8 @@ Exclusive jQuery components :
 	- based on [http://www.jeasyui.com/documentation/index.php](http://www.jeasyui.com/documentation/index.php)
 - **FPaginate** 
 	- based on [https://github.com/lyonlai/bootstrap-paginator](https://github.com/lyonlai/bootstrap-paginator)
-
+- **FBootstrapTable,FBootstrapTableBtn** 
+	- based on [http://bootstrap-table.wenzhixin.net.cn/](http://bootstrap-table.wenzhixin.net.cn/)
     
     
 		
@@ -31,6 +32,8 @@ Exclusive jQuery Mixins :
 	- Based on [http://xdsoft.net/jqplugins/datetimepicker/](http://xdsoft.net/jqplugins/datetimepicker/)
 - **FNumberSpinner**
 	- Based on [http://www.jeasyui.com/documentation/index.php](http://www.jeasyui.com/documentation/index.php)
+- **FSummernote**
+	- Based on [http://summernote.org/](http://summernote.org/)
 
 
 
@@ -63,6 +66,7 @@ Then use components like you would normally do. For FDatagrid use "widgets" name
 - 1.0 : Update to Tapestry 5.4.x & Upgrade libs
 - 1.0.1
 	- Import free icons styles into widgets component module.For example: font awesome, ion icons, themify icons.
+	- Add Bootstrap table and WYSIWYG Summernote Editor components.
 
 
 
