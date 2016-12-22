@@ -19,13 +19,13 @@ public class FSummernote  {
 	 * 组件参数
 	 * 
 	 * en *
-	 * Summernote params
+	 * Summernote's params
 	 */
 	@Parameter
 	private JSONObject params;
 	
 	/**
-     * 语言默认是否中文
+     * 语言默认是中文
      * 
      * en *
      * Summernote messages language,has en or zh-cn.Default:zh-CN
@@ -33,12 +33,30 @@ public class FSummernote  {
 	@Parameter(value="zh-CN",defaultPrefix=BindingConstants.LITERAL)
     private String language;
 	
+	/**
+	 * 上传到服务器
+	 * 
+	 * en *
+	 * Upload to server,default:false
+	 */
 	@Parameter(value="false")
 	private boolean uploadToServer;
 	
-	@Parameter(value="300")
+	/**
+	 * 默认高度300(px)
+	 * 
+	 * en *
+	 * Default height 300 (px)
+	 */
+	@Parameter(value="300",defaultPrefix=BindingConstants.LITERAL)
 	private String height;
 	
+	/**
+	 * 上传图片的URL请求
+	 * 
+	 * en *
+	 * If uploadToServer is true, upload img url request.
+	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String url;
 	

@@ -29,7 +29,7 @@ public class FBootstrapTableBtn implements ClientElement {
 	 * 组件的文本
 	 * 
 	 * en *
-	 * Bootstrap table button label
+	 * FBootstrapTableBtn's label
 	 */
 	@Parameter(required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String text;
@@ -38,7 +38,7 @@ public class FBootstrapTableBtn implements ClientElement {
 	 * 组件类型:page(pagelink),event(eventlink)
 	 * 
 	 * en *
-	 * Bootstrap table button type,has page(pagelink) or event(eventlink).Default:event
+	 * FBootstrapTableBtn's type,has page(pagelink) or event(eventlink).Default:event
 	 */
 	@Parameter(value="event",defaultPrefix=BindingConstants.LITERAL)
 	private String linkType;
@@ -47,7 +47,7 @@ public class FBootstrapTableBtn implements ClientElement {
 	 * 按钮样式
 	 * 
 	 * en *
-	 * Bootstrap table button css class name.Default:btn
+	 * FBootstrapTableBtn's css class name.Default:btn
 	 */
 	@Parameter(value="btn",defaultPrefix=BindingConstants.LITERAL)
 	private String cls;
@@ -56,7 +56,7 @@ public class FBootstrapTableBtn implements ClientElement {
 	 * 按钮图标
 	 * 
 	 * en *
-	 * Bootstrap table button icon css class name.Default:fa
+	 * FBootstrapTableBtn's icon css class name.Default:fa
 	 */
 	@Parameter(value="fa",defaultPrefix=BindingConstants.LITERAL)
 	private String itemcls;
@@ -71,16 +71,16 @@ public class FBootstrapTableBtn implements ClientElement {
 	 * 客户端事件类型
 	 * 
 	 * en *
-	 * Bootstrap table button client event.Default:click(js onClick event)
+	 * FBootstrapTableBtn's client event.Default:click(js onClick event)
 	 */
 	@Parameter(value="click",defaultPrefix=BindingConstants.LITERAL)
 	private String clientEvent;
 	
 	/**
-	 * datagrid id
+	 * FBootstrapTable id
 	 * 
 	 * en *
-	 * Edited datagrid's id
+	 * Edited FBootstrapTable's id
 	 */
 	@Parameter(required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String gridId;
@@ -94,14 +94,6 @@ public class FBootstrapTableBtn implements ClientElement {
 	@Parameter(required=true,defaultPrefix=BindingConstants.LITERAL)
 	private String url;
 	
-	/**
-	 * 没有选择数据时,警告框的内容
-	 * 
-	 * en *
-	 * Bootstrap table has not data, the contents of the warning box
-	 */
-	@Parameter(defaultPrefix=BindingConstants.LITERAL)
-	private String alertMsg;
 	
 	/**
 	 * 编辑模式下出现多条记录时,警告框的内容
@@ -111,15 +103,6 @@ public class FBootstrapTableBtn implements ClientElement {
 	 */
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String editMsg;
-	
-	/**
-	 * 没有选择数据时,警告框的标题
-	 * 
-	 * en *
-	 * Bootstrap table has not data, the contents of the warning title
-	 */
-	@Parameter(defaultPrefix=BindingConstants.LITERAL)
-	private String alertTitle;
 	
 	/**
 	 * 确认框的标题
@@ -166,6 +149,15 @@ public class FBootstrapTableBtn implements ClientElement {
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)
 	private String closed;
 	
+	/**
+	 * 设置按钮disabled=true
+	 * 
+	 * en *
+	 * Disabled button
+	 */
+	@Parameter(value="true", defaultPrefix=BindingConstants.LITERAL)
+	private String disabled;
+	
 	@Inject
 	private Messages messages;
 	
@@ -186,7 +178,12 @@ public class FBootstrapTableBtn implements ClientElement {
     }
 	
 	public void beginRender(MarkupWriter writer){
-		writer.element("a", "id", getClientId(), "class", cls);
+		if("true".equalsIgnoreCase(disabled)){
+			writer.element("button", "id", getClientId(), "class", cls, "disabled","disabled","data-button-type","btn"+gridId);
+		}else{
+			writer.element("button", "id", getClientId(), "class", cls,"data-button-type","btn"+gridId);
+		}
+		
 		writer.element("i", "class", itemcls);
 		writer.end();
 		writer.write(text);
@@ -202,18 +199,12 @@ public class FBootstrapTableBtn implements ClientElement {
 		opts.put("zoneId", zone);
 		opts.put("clientEvent", clientEvent);
 		opts.put("url", url);
-		opts.put("title", alertTitle !=null ? alertTitle : messages.get("alertTitle"));
 		opts.put("confirmTitle", confirmTitle !=null ? confirmTitle : messages.get("confirmTitle"));
 		opts.put("confirmMsg", confirmMsg !=null ? confirmMsg : messages.get("confirmMsg"));
 		opts.put("submitMsg", submitMsg !=null ? submitMsg : messages.get("submitMsg"));
 		opts.put("cancelMsg", cancelMsg !=null ? cancelMsg : messages.get("cancelMsg"));
 		opts.put("editMsg", editMsg !=null ? editMsg : messages.get("editMsg"));
 		opts.put("closed", closed);
-		if(StringUtils.isEmpty(alertMsg)){
-			opts.put("alertMsg", messages.get("alertMsg"));
-		}else{
-			opts.put("alertMsg", alertMsg);
-		}
 		
 		javaScriptSupport.require("inits/init-bootstraptablebtn").with(opts);
 	}

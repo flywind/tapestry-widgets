@@ -1,9 +1,72 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter" xmlns:w="tapestry-library:widgets">
+<h3>${message:compoment-desc}</h3>
+<h4>FArtDialog params:</h4>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>${message:desc1}</td>
+    </tr> 
+    <tr>
+      <td>language</td>
+      <td>String</td>
+      <td></td>
+      <td>zh-CN</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc2}</td>
+    </tr> 
+    <tr>
+      <td>uploadToServer</td>
+      <td>boolean</td>
+      <td></td>
+      <td>false</td>
+      <td></td>
+      <td>1.0</td>
+      <td>${message:desc3}</td>
+    </tr> 
+    <tr>
+      <td>url</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc4}</td>
+    </tr> 
+    <tr>
+      <td>height</td>
+      <td>String</td>
+      <td></td>
+      <td>300</td>
+      <td>literal</td>
+      <td>1.0</td>
+      <td>${message:desc5}</td>
+    </tr>
+  </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
+</table>
       <t:form>
       ${edit}
-     <t:TextArea t:id="edit" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.url="${uploadurl}" FSummernote.language="en"/>
-     <t:TextArea t:id="edit2" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.url="${uploadurl}" FSummernote.language="en"/>
+     <t:TextArea style="height:300px" t:id="edit" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="false" FSummernote.language="en"/>
+     <t:TextArea style="height:300px" t:id="edit2" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.url="/Upload" FSummernote.language="en"/>
      <t:submit value="submit"/>
      </t:form>
 </html>

@@ -7,7 +7,6 @@
 			gridId=spec.gridId,
 			zoneId=spec.zoneId,
 			clientEvent=spec.clientEvent,
-			alertMsg=spec.alertMsg,
 			title=spec.title,
 			confirmTitle=spec.confirmTitle,
 			confirmMsg=spec.confirmMsg,
@@ -16,23 +15,21 @@
 			closed=spec.closed,
 			editMsg=spec.editMsg;
 			
+			var $table = $('#'+gridId);
+			
+			$table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table', function () {
+				$('[data-button-type=btn'+gridId+']').each(function(){
+					$(this).prop('disabled', !$table.bootstrapTable('getSelections').length);
+				})
+		        
+		    });
+			
 			$('#'+obj).bind(clientEvent, function(e){
 
 				var rows = $.map($('#'+gridId).bootstrapTable('getSelections'), function (row) {
                     return row.id;
                 });
-				if(rows.length < 1){
-					var o = {
-						id:	obj+'noSelected',
-						content: alertMsg,
-						lock: true,
-						padding: '20px 150px',
-						title:title,
-						time: 3
-					};
-					art.dialog(o);
-					return;
-				}
+				
 				if(linkType == "event"){
 					art.dialog({
 					    id: obj+'confirm',

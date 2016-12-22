@@ -67,16 +67,28 @@ public class FBootstrapTable implements ClientElement{
      * 语言默认是否中文
      * 
      * en *
-     * Datagrid messages language,has en or zh-cn.Default:zh-CN
+     * FBootstrapTable messages language,has en or zh-cn.Default:zh-CN
      */
 	@Parameter(value="zh-CN",defaultPrefix=BindingConstants.LITERAL)
     private String language;
 	
+	/**
+	 * 数据源
+	 * 
+	 * en *
+	 * FBootstrapTable data source,it's list
+	 */
 	@SuppressWarnings("rawtypes")
 	@Parameter(required = true, autoconnect = true)
     private List source;
 	
-	@Parameter
+	/**
+	 * FBootstrapTable的栏位
+	 * 
+	 * en *
+	 * FBootstrapTable's columns
+	 */
+	@Parameter(required = true)
 	private JSONArray columns;
 
 	@Inject

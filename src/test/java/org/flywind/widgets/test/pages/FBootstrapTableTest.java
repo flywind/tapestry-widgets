@@ -2,9 +2,10 @@ package org.flywind.widgets.test.pages;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
-import org.apache.tapestry5.EventContext;
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
@@ -17,6 +18,7 @@ import org.flywind.widgets.test.base.AppBase;
 import org.flywind.widgets.test.business.example.ExampleService;
 import org.flywind.widgets.test.entities.example.Example;
 
+@Import(stylesheet="context:assets/styles/demo.css")
 public class FBootstrapTableTest extends AppBase  {
 
 	@Inject
@@ -35,7 +37,15 @@ public class FBootstrapTableTest extends AppBase  {
 	@Property
 	private String delUrl,deleteUrl;
 	
+	@Inject
+	protected Locale currentLocale;
+	
+	@Property
+	@Persist
+	private String lang;
+	
 	public void setupRender(){
+		lang = currentLocale.toLanguageTag();
 		delUrl = componentResources.createEventLink("del").toURI();
 	}
 	
