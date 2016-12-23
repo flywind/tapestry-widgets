@@ -30,7 +30,19 @@
 			if(summernoteLangId.value === 'zh-cn'){
 				data.params.lang = "zh-CN";	
 			}
-			   
+			if(data.params.tools == "full"){
+				data.params.toolbar=[
+     			    ['codeview', ['codeview']],             
+     			    ['font', ['bold', 'italic', 'fontname', 'fontsize', 'strikethrough', 'underline']], 
+     			    ['font', ['superscript', 'subscript', 'clear']],
+     			    ['color', ['color', 'undo', 'redo']], 
+     			    ['insert', ['picture', 'video', 'link', 'table', 'hr']],
+     			    ['style', ['style', 'height']],         
+     			    ['style', ['ol', 'ul', 'paragraph']],
+     			    ['misc', ['fullscreen','help']]
+     			];
+			}
+			
 			if(uploadToServer){
 				newParams = {
 					callbacks: {  
@@ -68,7 +80,7 @@
 			
 			var endParams = $.extend(data.params,newParams)
 			
-			$('#'+data.id).summernote(data.params);
+			$('#'+data.id).summernote(endParams);
 		};
 		
 		

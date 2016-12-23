@@ -116,7 +116,7 @@ public class FBootstrapTable implements ClientElement{
 	public void setupRender(MarkupWriter writer){
 		writer.element("table", "id", getClientId(), "class", "table table-bordered table-striped");
 		writer.end();
-		writer.element("input", "id","tableLangId","type","hidden", "value",language.toLowerCase());
+		writer.element("input", "id","tableLangId","type","hidden", "value",language != null ? language.toLowerCase() : "zh-cn");
     	writer.end();
 	}
 	

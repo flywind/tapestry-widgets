@@ -15,6 +15,18 @@ import org.flywind.widgets.utils.JQueryUtils;
 @Import(stylesheet={"${widget.plugins.path}/summernote/summernote.min.css"})
 public class FSummernote  {
 	
+	public final static String TOOLS_FULL = "full";// All tools
+	public final static String TOOLS_DEFAULT = "normal";// Default tools
+	
+	/**
+	 * 富文本编辑器工具类型
+	 * 
+	 * en *
+	 * FSummernote tools type, has 'full','normal'.Default:normal
+	 */
+	@Parameter(value = TOOLS_DEFAULT, defaultPrefix = BindingConstants.LITERAL)
+	private String tools;
+	
 	/**
 	 * 组件参数
 	 * 
@@ -86,6 +98,7 @@ public class FSummernote  {
 		
 		JSONObject defaults = new JSONObject();
 		defaults.put("height", height);
+		defaults.put("tools", tools != null ? tools.toLowerCase() : tools);
 		
 		
 		JQueryUtils.merge(defaults, params);

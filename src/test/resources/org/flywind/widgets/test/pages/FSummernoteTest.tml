@@ -65,8 +65,8 @@
 </table>
       <t:form>
       ${edit}
-     <t:TextArea style="height:300px" t:id="edit" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="false" FSummernote.language="en"/>
-     <t:TextArea style="height:300px" t:id="edit2" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.url="/Upload" FSummernote.language="en"/>
+     <t:TextArea style="height:300px;display:none;border:none;" t:id="edit" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="false" FSummernote.language="en"/>
+     <t:TextArea style="height:300px" t:id="edit2" t:mixins="widgets/FSummernote" FSummernote.uploadToServer="true" FSummernote.tools="full" FSummernote.url="/Upload" FSummernote.language="en"/>
      <t:submit value="submit"/>
      </t:form>
 </html>
