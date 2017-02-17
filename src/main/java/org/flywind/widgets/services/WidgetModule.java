@@ -68,7 +68,7 @@ public class WidgetModule
             MappedConfiguration<String, Object> configuration)
     {
     	//定义jQuery模块的名称
-        configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
+        //configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
         //压缩JS，在开发模式建议设为false方便开发测试
         //configuration.add(SymbolConstants.MINIFICATION_ENABLED, true);
         
