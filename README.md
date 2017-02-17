@@ -8,6 +8,8 @@ CMS: http://cms.flywind.org/en/login
 User name: ###`admin`
 Password: ###`123456`
 
+<span style="color: red"> Some red text </span>
+
 Tapestry5 programming technology exchange:QQ group 41138107
 
 Exclusive jQuery components : 
