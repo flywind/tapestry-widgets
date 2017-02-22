@@ -15,6 +15,7 @@ Exclusive jQuery components :
 
 - **FAjaxUpload** 
 	- based on [https://github.com/FineUploader/fine-uploader](https://github.com/FineUploader/fine-uploader)	
+	- [view demo](http://www.flywind.org/en/blogdetial/222)
 - **FArtDialog,FArtDialogClose,FArtDialogLink**
 	- Based on [http://demo.jb51.net/js/2011/artDialog/_doc/labs.html](http://demo.jb51.net/js/2011/artDialog/_doc/labs.html)
 - **FCharacter**
