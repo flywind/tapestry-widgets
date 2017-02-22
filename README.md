@@ -52,6 +52,7 @@ Exclusive jQuery Mixins :
 	- [View demo](http://www.flywind.org/en/blogdetial/243)
 - **Ftagsinput**
 	- Based on [http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/](http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/)
+	- [View demo](http://www.flywind.org/en/blogdetial/241)
 - **FChosen**
 	- Based on [https://harvesthq.github.io/chosen/options.html](https://harvesthq.github.io/chosen/options.html)
 	- [View demo](http://www.flywind.org/en/blogdetial/240)
