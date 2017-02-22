@@ -20,7 +20,7 @@
       <td></td>
       <td></td>
       <td></td>
-      <td></td>
+      <td>1.0.1</td>
       <td>${message:desc1}</td>
     </tr>
   </tbody>
@@ -28,7 +28,7 @@
 </table>
 <h3>${tags}</h3>
 <t:form>
-	<t:textfield t:id="tags" t:mixins="widgets/FtagsField"/>
+	<t:textfield t:id="tags" t:mixins="widgets/Ftagsinput"/>
 	<input type="submit" value="submit"/>
 </t:form>
 </html>

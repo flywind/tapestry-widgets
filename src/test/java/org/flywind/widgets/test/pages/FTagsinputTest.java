@@ -6,9 +6,9 @@ import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 
 @Import(stylesheet="context:assets/styles/demo.css")
-public class FTagsFieldTest {
+public class FTagsinputTest {
 
 	@Property
 	@Persist(PersistenceConstants.FLASH)
-	private String tags;
+	private String tags,tags2;
 }

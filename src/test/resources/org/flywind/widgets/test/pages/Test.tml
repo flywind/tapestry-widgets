@@ -1,7 +1,10 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
-<t:form>
+<t:zone t:id="mezone" id="mezone">${name}
+<t:form t:id="myform" t:zone="mezone">
+<t:label for="name"/>
 <t:TextField t:id="name" t:validate="required"/>
 <t:submit/>
 </t:form>
+</t:zone>
 </html>

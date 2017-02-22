@@ -1,0 +1,79 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+      <h3>${message:compoment-desc}</h3>
+<table class="tapestry-tab" border="0">
+  <thead>
+    <tr>
+      <th>${message:grid-name}</th>
+      <th>${message:grid-type}</th>
+      <th>${message:grid-symbol}</th>
+      <th>${message:grid-default}</th>
+      <th>${message:grid-default-prefix}</th>
+      <th>${message:grid-since}</th>
+      <th>${message:grid-desc}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model</td>
+      <td>JSONArray</td>
+      <td>Required,Not Null</td>
+      <td></td>
+      <td></td>
+      <td>1.0.1</td>
+      <td>${message:desc1}</td>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>JSONObject</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1.0.1</td>
+      <td>${message:desc2}</td>
+    </tr>
+  </tbody>
+  <tfoot><tr><td colspan="7">${message:grid-info}</td></tr></tfoot>
+</table>
+<style>
+	.select{
+		width:160px;
+	}
+</style>
+<t:zone t:id="myZone" id="myZone">
+	<h3>${tags}</h3>
+<t:form t:id="meform" t:zone="myZone" class="form-horizontal">
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Tags <small>(Default max_selected_options = 4)</small></label>
+		<div class="col-lg-7">
+			<t:textfield t:id="tags" t:validate="required" data-placeholder="Choose tapestry version,select limit 4" t:mixins="widgets/FChosen" FChosen.model="[
+			{'value':'1','text':'tapestry 5.1'},
+			{'value':'2','text':'tapestry 5.2'},
+			{'value':'3','text':'tapestry 5.3'},
+			{'value':'4','text':'tapestry 5.4'},
+			{'value':'5','text':'tapestry 5.5'}]" style="display:none;"/>
+			
+		</div>
+	</div>
+	<input class="col-lg-offset-3" type="submit" value="submit"/>
+</t:form>
+</t:zone>
+<h3>${tags2}</h3>
+<t:form t:id="myform" class="form-horizontal">
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Tags2 <small>(max_selected_options = 6)</small></label>
+		<div class="col-lg-7">
+			<t:textfield t:id="tags2" data-placeholder="Choose a tapestry version..." t:mixins="widgets/FChosen" FChosen.model="[
+			{'value':'1','text':'Hello Kitty'},
+			{'value':'2','text':'Chinese'},
+			{'value':'3','text':'Facebook'},
+			{'value':'4','text':'Twitte'},
+			{'value':'5','text':'Usa'},
+			{'value':'6','text':'King'},
+			{'value':'7','text':'Mac'},
+			{'value':'8','text':'Japanese'}]" FChosen.params="{'width':'200px','max_selected_options':6}" style="display:none;"/>
+		</div>
+	</div>
+	<input type="submit" class="col-lg-offset-3" value="submit"/>
+</t:form>
+</html>

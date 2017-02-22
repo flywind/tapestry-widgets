@@ -10,13 +10,13 @@
 	});
 	
 	define(['jquery','bootstrap/tags'],function($,tags){
-		var tagsinput = {};
-		tagsinput.tagsfield = function(spec){
+		var init;
+		init = function(spec){
 			$('#'+spec.id).tagsinput(spec.params);
 		};
 		
 		return {
-			tagsfield: tagsinput.tagsfield
+			init: init
 		}
 	});
 	

@@ -10,7 +10,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.flywind.widgets.utils.JQueryUtils;
 
 @Import(stylesheet = { "${widget.plugins.path}/bootstrap-tagsinput/bootstrap-tagsinput.min.css"})
-public class FTagsField {
+public class FTagsinput {
 
 	@InjectContainer
 	private ClientElement clientElement;
@@ -36,7 +36,7 @@ public class FTagsField {
 		d.put("params", defaults);
 		json(d);
 		
-		javaScriptSupport.require("inits/init-tags").invoke("tagsfield").with(d);
+		javaScriptSupport.require("inits/init-tags").invoke("init").with(d);
 	}
 	
 	protected void json(JSONObject params) {}
