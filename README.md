@@ -21,7 +21,7 @@ Exclusive jQuery components :
 	- [View demo](http://www.flywind.org/en/blogdetial/224)
 - **FCharacter**
 	- Based on [http://www.flywind.org/en/start](http://www.flywind.org/en/start)
-	-- [View deom](http://www.flywind.org/en/blogdetial/221)
+	- [View deom](http://www.flywind.org/en/blogdetial/221)
 - **FDatagrid,FSubgrid,FDatagridBtn,FTabs**
 	- based on [http://www.jeasyui.com/documentation/index.php](http://www.jeasyui.com/documentation/index.php)
 	- [View deon](http://www.flywind.org/en/blogdetial/227)
@@ -46,7 +46,7 @@ Exclusive jQuery Mixins :
 	- [View demo](http://www.flywind.org/en/blogdetial/229)
 - **FNumberSpinner**
 	- Based on [http://www.jeasyui.com/documentation/index.php](http://www.jeasyui.com/documentation/index.php)
-	- [View demo]
+	- [View demo](http://www.flywind.org/en/blogdetial/243)
 - **FSummernote**
 	- Based on [http://summernote.org/](http://summernote.org/)
 	- [View demo](http://www.flywind.org/en/blogdetial/243)
