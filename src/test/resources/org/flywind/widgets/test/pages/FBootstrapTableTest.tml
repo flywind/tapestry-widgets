@@ -199,10 +199,10 @@
 </table>
 
       <style>.mar-pixe-r10{margin-right:10px;}</style>
-      
+      <t:zone t:id="zoneOne" id="zoneOne">
       <t:widgets.FBootstrapTableBtn t:id="delete" zone="zoneOne" t:cls="btn btn-danger mar-pixe-r10 toolbarBtn" text="Delete data" url="${delUrl}" alertMsg="No data selected" gridId="t1" />
       <t:widgets.FBootstrapTableBtn t:id="edit" t:cls="btn btn-info mar-pixe-r10 toolbarBtn" linkType="page" text="Edit data" url="FDatagridModeTest" gridId="t1"/>
-      <t:zone t:id="zoneOne" id="zoneOne">
+      
 <t:widgets.FBootstrapTable t:id="t1" t:source="examples" t:language="${lang}" t:columns="[{'field':'state','checkbox':'true'},
 {'field':'id','title':'Hello id'},
 {'field':'companyName','title':'companyName'},

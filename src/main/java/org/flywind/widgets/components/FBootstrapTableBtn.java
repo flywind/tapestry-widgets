@@ -179,9 +179,9 @@ public class FBootstrapTableBtn implements ClientElement {
 	
 	public void beginRender(MarkupWriter writer){
 		if("true".equalsIgnoreCase(disabled)){
-			writer.element("button", "id", getClientId(), "class", cls, "disabled","disabled","data-button-type","btn"+gridId);
+			writer.element("button", "id", getClientId(), "class", cls, "data-url",url, "disabled","disabled","data-button-type","btn"+gridId);
 		}else{
-			writer.element("button", "id", getClientId(), "class", cls,"data-button-type","btn"+gridId);
+			writer.element("button", "id", getClientId(), "class", cls,"data-url",url,"data-button-type","btn"+gridId);
 		}
 		
 		writer.element("i", "class", itemcls);

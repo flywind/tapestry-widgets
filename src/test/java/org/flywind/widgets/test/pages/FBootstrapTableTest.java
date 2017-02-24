@@ -35,6 +35,7 @@ public class FBootstrapTableTest extends AppBase  {
 	private Zone zoneOne;
 	
 	@Property
+	@Persist
 	private String delUrl,deleteUrl;
 	
 	@Inject
@@ -65,5 +66,7 @@ public class FBootstrapTableTest extends AppBase  {
 		for(String i : rc){
 			System.out.println(i);
 		}
+		
+		ajaxResponseRenderer.addRender(zoneOne);
 	}
 }
