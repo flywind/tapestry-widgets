@@ -60,10 +60,12 @@
 </t:zone>
 <h3>${tags2}</h3>
 <t:form t:id="myform" class="form-horizontal">
+<t:textfield t:id="name" t:validate="required"/>
+<t:textfield t:id="name2" t:validate="required"/>
 	<div class="form-group">
 		<label class="col-lg-3 control-label">Tags2 <small>(max_selected_options = 6)</small></label>
 		<div class="col-lg-7">
-			<t:textfield t:id="tags2" data-placeholder="Choose a tapestry version..." t:mixins="widgets/FChosen" FChosen.model="[
+			<t:textfield t:id="tags2" t:validate="required" data-placeholder="Choose a tapestry version..." t:mixins="widgets/FChosen" FChosen.model="[
 			{'value':'1','text':'Hello Kitty'},
 			{'value':'2','text':'Chinese'},
 			{'value':'3','text':'Facebook'},

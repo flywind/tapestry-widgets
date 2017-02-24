@@ -22,6 +22,10 @@ public class FChosenTest {
 	@Persist(PersistenceConstants.FLASH)
 	private String tags2;
 	
+	@Property
+	@Persist(PersistenceConstants.FLASH)
+	private String name,name2;
+	
 	@InjectComponent("meform")
 	private Form meform;
 	

@@ -48,7 +48,7 @@
 			
 			 var form = $obj.parents('form');
 			 
-			 form.submit(function(){
+			 /*form.submit(function(){
 				 var requiredMsg = $obj.attr('data-optionality');
 				 if(typeof requiredMsg == "string"){
 					 if($obj.val() == ""){
@@ -66,7 +66,7 @@
 						}
 					}
 				 } 
-			 })
+			 })*/
 			
 		};
 		
