@@ -85,14 +85,14 @@ Then use components like you would normally do. For FDatagrid use "widgets" name
 
 
 # Changelog related to Tapestry 5.4.x branch
-- 1.0 : Update to Tapestry 5.4.x & Upgrade libs
+
 - 1.0.1
 	- Import free icons styles into widgets component module.For example: font awesome, ion icons, themify icons.
 	- Add Bootstrap table and WYSIWYG Summernote Editor componenta.
 	- Add Ftagsinput and FChosen components.
 	- Since 1.0.1 WidgetModule not add javascript infrastructure provider.Please add jquery in your Project AppModule, like this: configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
 
-
+- 1.0 : Update to Tapestry 5.4.x & Upgrade libs
 
 ## License
 
