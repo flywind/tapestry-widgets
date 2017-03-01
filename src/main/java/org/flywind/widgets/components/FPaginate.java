@@ -2,6 +2,7 @@ package org.flywind.widgets.components;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.ClientElement;
@@ -172,11 +173,13 @@ public class FPaginate implements ClientElement {
     public void onData(){
 
     	String pageStr = request.getParameter("pageNumber");
-    	
-    	String[] p = queryParams.split(",");
-    	for(String s : p){
-    		request.setAttribute(s, request.getParameter(s));
+    	if(StringUtils.isNotBlank(queryParams)){
+    		String[] p = queryParams.split(",");
+        	for(String s : p){
+        		request.setAttribute(s, request.getParameter(s));
+        	}
     	}
+    	
     	int pageNumber = 1;
         int pagesize = pageSize;
         if (NumberUtils.isNumber(pageStr)) {

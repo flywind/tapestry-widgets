@@ -33,6 +33,11 @@
 	            }
 	        }
 			
+			if(options.totalPages == 0){
+				alert("Total pages is 0, Failed to initialize the bootstrapPaginator!");
+				return;
+			}
+			
 			obj.bootstrapPaginator(options);
 			
 		}
