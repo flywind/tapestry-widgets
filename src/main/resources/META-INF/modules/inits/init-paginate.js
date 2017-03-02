@@ -1,5 +1,5 @@
 (function(){
-	define(["t5/core/dom","t5/core/events","t5/core/zone","t5/core/forms","plugin/pager","jquery"],function(dom,events,zoneManager,formManager,pager,$){
+	define(["t5/core/dom","t5/core/events","t5/core/zone","t5/core/forms","plugin/pager","jquery","t5/core/console"],function(dom,events,zoneManager,formManager,pager,$,console){
 		var fpaginate,ajaxData,ajaxRequestUrl,paramToString;
 		
 		fpaginate = function(spec){
@@ -34,7 +34,8 @@
 	        }
 			
 			if(options.totalPages == 0){
-				alert("Total pages is 0, Failed to initialize the bootstrapPaginator!");
+				console.warn("No matching records found");
+				console.warn("没有找到匹配的记录");
 				return;
 			}
 			
