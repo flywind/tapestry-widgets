@@ -189,7 +189,8 @@ public class FAjaxUpload extends AbstractExtendableComponent {
                 .put("dropAreaLabel", messages.get("dropArea-label"))
                 .put("cancelLabel", messages.get("cancel-label"))
                 .put("failedLabel", messages.get("failed-label"))
-                .put("multipleError", messages.get("multipleError"));
+                .put("multipleError", messages.get("multipleError"))
+        		.put("tipLabel", messages.get("tip-label"));
 
         final long sizeLimit = calculateSizeLimit();
 

@@ -7,6 +7,7 @@
 	        options = {
 	            showMessage : function(message) {
 	            	var dialogOpts = {
+	            		title:spec.messages.tipLabel,
         			    content: message,
         				id:'aid'+spec.elementId,
         				padding: '20px',
