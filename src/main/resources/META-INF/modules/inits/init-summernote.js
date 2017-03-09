@@ -20,12 +20,14 @@
 	});
 	
 	define(["jquery","lang"],function($,l){
-		var init,objId;
+		var init,objId,createModal;
 		
 		init = function(data){
 			var uploadToServer = data.uploadToServer,
 				url = data.url,
-				objId = data.id;
+				objId = data.id,
+				modalImageTitle = data.modalImageTitle,
+				modalImageContent = data.modalImageContent;
 			var newParams = {};
 			if(summernoteLangId.value === 'zh-cn'){
 				data.params.lang = "zh-CN";	
@@ -66,7 +68,9 @@
 					                	if(!(data.err) || data.err == ""){
 					                		$('#'+objId).summernote('insertImage',data.url,'img');
 					                	}else{
-					                		alert(data.err);
+					                		var e = modalImageContent + " "+data.err;
+					                		createModal(objId,modalImageTitle,e);
+					                		$('#'+objId+'Modal').modal('show');
 					                	}
 					                	
 					                }	
@@ -82,6 +86,22 @@
 			
 			$('#'+data.id).summernote(endParams);
 		};
+		
+		createModal = function(id,title,content){
+			var modalId = id+'Modal';
+			var html =  "";
+			html += '<div class="modal fade" id="'+modalId+'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+			html += '<div class="modal-dialog"><div class="modal-content">';
+			html += '<div class="modal-header">';
+			html += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+			html += '<h4 class="modal-title" id="myModalLabel">'+title+'</h4>';
+			html += '</div>';
+			html += '<div class="modal-body">'+content+'</div>'
+			html += '</div></div>';
+			html += '</div>';
+			
+			$('body').append(html);
+		}
 		
 		
 		return {

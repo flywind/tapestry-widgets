@@ -7,6 +7,7 @@ import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectContainer;
 import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
@@ -63,6 +64,12 @@ public class FSummernote  {
 	@Parameter(value="300",defaultPrefix=BindingConstants.LITERAL)
 	private String height;
 	
+	@Parameter
+	private String modalImageTitle;
+	
+	@Parameter
+	private String modalImageContent;
+	
 	/**
 	 * 上传图片的URL请求
 	 * 
@@ -81,6 +88,9 @@ public class FSummernote  {
 	@Inject
 	private JavaScriptSupport javaScriptSupport;
 	
+	@Inject
+    private Messages messages;
+	
 	public void setupRender(MarkupWriter writer){
 		writer.element("input", "id","summernoteLangId","type","hidden", "value",language.toLowerCase());
     	writer.end();
@@ -91,6 +101,8 @@ public class FSummernote  {
 		data.put("id", clientElement.getClientId());
 		data.put("uploadToServer", uploadToServer);
 		data.put("url", url);
+		data.put("modalImageTitle", modalImageTitle == null ? messages.get("modalImageTitle") : modalImageTitle);
+		data.put("modalImageContent", modalImageContent == null ? messages.get("modalImageContent") : modalImageContent);
 		
 		if(params == null){
 			params = new JSONObject();
