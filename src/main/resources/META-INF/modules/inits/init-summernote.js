@@ -56,8 +56,8 @@
 			            	var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
 			            	var name = files[0].name;
 			            	if(reg.test(name)){
-			            		createModal(objId,modalImageTitle,modalImageText);
-			            		$('#'+objId+'Modal').modal('show');
+			            		createModal(objId,"modal1",modalImageTitle,modalImageText);
+			            		$('#'+objId+"modal1").modal('show');
 			            		return;
 			            	}
 
@@ -78,8 +78,8 @@
 					                	}else{
 					                		if(data.limitSize){
 					                			var e = modalImageContent + " "+data.limitSize;
-						                		createModal(objId,modalImageTitle,e);
-						                		$('#'+objId+'Modal').modal('show');
+						                		createModal(objId,"modal2",modalImageTitle,e);
+						                		$('#'+objId+"modal2").modal('show');
 					                		}
 					                		consloe.warn(data.err);
 					                	}
@@ -101,8 +101,8 @@
 			$('#'+data.id).summernote(endParams);
 		};
 		
-		createModal = function(id,title,content){
-			var modalId = id+'Modal';
+		createModal = function(id,itemId,title,content){
+			var modalId = id+itemId;
 			var html =  "";
 			html += '<div class="modal fade" id="'+modalId+'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
 			html += '<div class="modal-dialog"><div class="modal-content">';
