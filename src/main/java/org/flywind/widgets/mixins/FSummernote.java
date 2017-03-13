@@ -70,6 +70,9 @@ public class FSummernote  {
 	@Parameter
 	private String modalImageContent;
 	
+	@Parameter
+	private String modalImageText;
+	
 	/**
 	 * 上传图片的URL请求
 	 * 
@@ -103,6 +106,7 @@ public class FSummernote  {
 		data.put("url", url);
 		data.put("modalImageTitle", modalImageTitle == null ? messages.get("modalImageTitle") : modalImageTitle);
 		data.put("modalImageContent", modalImageContent == null ? messages.get("modalImageContent") : modalImageContent);
+		data.put("modalImageText", modalImageText == null ? messages.get("modalImageText") : modalImageText);
 		
 		if(params == null){
 			params = new JSONObject();

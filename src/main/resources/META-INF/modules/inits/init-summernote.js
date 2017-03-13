@@ -14,12 +14,12 @@
 		},
 		paths:{
 			"lang":"plugins/summernote/lang/"+langJS,
-			"summernote":"plugins/summernote/summernote.min"
+			"summernote":"plugins/summernote/summernote"
 		},
 		waitSeconds:0
 	});
 	
-	define(["jquery","lang"],function($,l){
+	define(["jquery","lang","t5/core/console"],function($,l,consloe){
 		var init,objId,createModal;
 		
 		init = function(data){
@@ -27,7 +27,8 @@
 				url = data.url,
 				objId = data.id,
 				modalImageTitle = data.modalImageTitle,
-				modalImageContent = data.modalImageContent;
+				modalImageContent = data.modalImageContent,
+				modalImageText = data.modalImageText;
 			var newParams = {};
 			if(summernoteLangId.value === 'zh-cn'){
 				data.params.lang = "zh-CN";	
@@ -52,7 +53,14 @@
 			            	
 			            	var fd = new FormData();
 			            	fd.append('filedata',files[0]);
-			
+			            	var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
+			            	var name = files[0].name;
+			            	if(reg.test(name)){
+			            		createModal(objId,modalImageTitle,modalImageText);
+			            		$('#'+objId+'Modal').modal('show');
+			            		return;
+			            	}
+
 			                var opts = {
 			                		url:data.url,
 			                		type : 'POST',
@@ -68,12 +76,18 @@
 					                	if(!(data.err) || data.err == ""){
 					                		$('#'+objId).summernote('insertImage',data.url,'img');
 					                	}else{
-					                		var e = modalImageContent + " "+data.err;
-					                		createModal(objId,modalImageTitle,e);
-					                		$('#'+objId+'Modal').modal('show');
+					                		if(data.limitSize){
+					                			var e = modalImageContent + " "+data.limitSize;
+						                		createModal(objId,modalImageTitle,e);
+						                		$('#'+objId+'Modal').modal('show');
+					                		}
+					                		consloe.warn(data.err);
 					                	}
 					                	
-					                }	
+					                },
+					                error: function(d){
+					                	consloe.warn(d);
+					                }
 			                }
 			                $.ajax(opts);
 			                //dom.ajaxRequest(data.url,{});
