@@ -173,7 +173,7 @@ public class FPaginate implements ClientElement {
     public void onData(){
 
     	String pageStr = request.getParameter("pageNumber");
-    	if(StringUtils.isNotBlank(queryParams)){
+    	if(StringUtils.isNotEmpty(queryParams)){
     		String[] p = queryParams.split(",");
         	for(String s : p){
         		request.setAttribute(s, request.getParameter(s));
